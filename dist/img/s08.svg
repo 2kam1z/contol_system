@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229166"
+   version="1.1"
+   id="svg185"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="s08.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="7.9778157"
+     inkscape:cx="18.175401"
+     inkscape:cy="30.083422"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs182">
+    <linearGradient
+       id="linearGradient7585"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#56bece;stop-opacity:1;"
+         offset="0"
+         id="stop7583" />
+    </linearGradient>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-71"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-3"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-1"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-4"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-52"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-6"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-38"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7585"
+       id="linearGradient7587"
+       x1="0.21962484"
+       y1="6.6145834"
+       x2="13.009542"
+       y2="6.6145834"
+       gradientUnits="userSpaceOnUse" />
+    <pattern
+       id="EMFhbasepattern-0"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path425"
+       style="fill:url(#linearGradient7587);fill-opacity:1;stroke:none;stroke-width:0.124346;stroke-linecap:round"
+       d="M 6.6145833 0.21962484 C 3.0828364 0.21969104 0.21969104 3.0828363 0.21962484 6.6145833 C 0.21969114 10.146335 3.0828364 13.009476 6.6145833 13.009542 C 10.146335 13.009476 13.009476 10.146335 13.009542 6.6145833 C 13.009476 3.0828363 10.146335 0.21969114 6.6145833 0.21962484 z M 6.639388 2.5657349 C 8.8636049 2.5657349 10.641728 4.3931016 10.641728 6.6145833 C 10.641728 8.8388002 8.8636049 10.663432 6.639388 10.663432 C 4.4179058 10.663432 2.587439 8.8388002 2.587439 6.6145833 C 2.587439 4.3931016 4.4179058 2.5657349 6.639388 2.5657349 z M 6.3437988 3.7036499 C 6.0483299 3.9991178 5.6515786 4.4916544 5.4053548 5.1345703 L 6.3437988 5.1345703 L 6.3437988 3.7036499 z M 6.937561 3.7527425 L 6.937561 5.1345703 L 7.8263957 5.1345703 C 7.5801719 4.4916544 7.2330289 4.0482104 6.937561 3.7527425 z M 5.4544474 3.8514445 C 4.8115302 4.0976673 4.3192991 4.5901437 3.9718506 5.1345703 L 4.7625 5.1345703 C 4.9594787 4.6421239 5.2082237 4.1961566 5.4544474 3.8514445 z M 7.8263957 3.8514445 C 8.0726194 4.1961566 8.321517 4.6421239 8.4692505 5.1345703 L 9.2598999 5.1345703 C 8.9124517 4.5901437 8.4200676 4.0976673 7.8263957 3.8514445 z M 3.725354 5.7774251 C 3.6761101 6.0236478 3.6271688 6.3191144 3.6271688 6.6145833 C 3.6271688 6.9127873 3.6761089 7.2081027 3.725354 7.4543254 L 4.663798 7.4543254 C 4.6145531 7.2081027 4.5656128 6.9127873 4.5656128 6.6145833 C 4.5656128 6.3191144 4.6145531 6.0236478 4.663798 5.7774251 L 3.725354 5.7774251 z M 5.2575602 5.7774251 C 5.2083073 6.0236478 5.159375 6.3191144 5.159375 6.6145833 C 5.159375 6.9127873 5.2083183 7.2081027 5.2575602 7.4543254 L 6.3437988 7.4543254 L 6.3437988 5.7774251 L 5.2575602 5.7774251 z M 6.937561 5.7774251 L 6.937561 7.4543254 L 7.9741903 7.4543254 C 8.0234432 7.2081027 8.0728923 6.9127873 8.0728923 6.6145833 C 8.0728923 6.3191144 8.0234322 6.0236478 7.9741903 5.7774251 L 6.937561 5.7774251 z M 8.6170451 5.7774251 C 8.666287 6.0236478 8.6666545 6.3191144 8.6666545 6.6145833 C 8.6666545 6.9127873 8.666287 7.2081027 8.6170451 7.4543254 L 9.5063965 7.4543254 C 9.604889 7.2081027 9.6541911 6.9127873 9.6541911 6.6145833 C 9.6541911 6.3191144 9.6048914 6.0236478 9.5063965 5.7774251 L 8.6170451 5.7774251 z M 3.9718506 8.0480876 C 4.3192991 8.6390244 4.8115302 9.0848381 5.4544474 9.380306 C 5.2082237 9.0355939 4.9594787 8.5897792 4.7625 8.0480876 L 3.9718506 8.0480876 z M 5.4053548 8.0480876 C 5.6515786 8.7402487 6.0483299 9.1835401 6.3437988 9.479008 L 6.3437988 8.0480876 L 5.4053548 8.0480876 z M 6.937561 8.0480876 L 6.937561 9.479008 C 7.2330289 9.1835401 7.5801719 8.7402487 7.8263957 8.0480876 L 6.937561 8.0480876 z M 8.4692505 8.0480876 C 8.321517 8.5897792 8.0726194 9.0355939 7.8263957 9.380306 C 8.4200676 9.0848381 8.9124517 8.6390244 9.2598999 8.0480876 L 8.4692505 8.0480876 z " />
+  </g>
+</svg>

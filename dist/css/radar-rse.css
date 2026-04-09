@@ -1,0 +1,104 @@
+.radar-action {
+  border-width: 1px;
+  font-weight: 500;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.radar-action:hover,
+.radar-action:focus {
+  transform: scale(1.04);
+  background-color: var(--bs-primary-bg-subtle);
+  border-color: var(--bs-primary);
+  color: var(--bs-emphasis-color);
+  box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12);
+}
+
+.radar-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.radar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .08);
+}
+
+.radar-action.active,
+.radar-select.active .radar-card {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+  box-shadow: 0 .75rem 1.5rem rgba(13, 110, 253, .18);
+}
+
+.radar-select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: inherit;
+}
+
+.radar-select.active .text-body-secondary,
+.radar-select.active .card-hint,
+.radar-select.active .icon-square {
+  color: #fff !important;
+}
+
+.radar-back:hover,
+.radar-back:focus {
+  transform: translateX(-2px);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.radar-back {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card-hint {
+  font-size: .9rem;
+  color: var(--bs-secondary-color);
+  min-height: 68px;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.hint-wrap:hover .card-hint,
+.hint-wrap:focus-within .card-hint {
+  opacity: 1;
+}
+
+.group-block {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: var(--bs-body-bg);
+}
+
+.group-toggle,
+.mass-toggle,
+.range-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  border: 1px solid var(--bs-border-color);
+  border-radius: .9rem;
+  background: var(--bs-body-bg);
+  padding: .9rem 1rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.group-toggle:hover,
+.mass-toggle:hover,
+.range-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--bs-primary);
+  box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .08);
+}
+
+.group-meta {
+  color: var(--bs-secondary-color);
+  font-size: .9rem;
+}

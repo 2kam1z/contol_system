@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru" data-bs-theme="auto">
+  <head>
+    <script src="./dist/js/color-modes.js"></script>
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Радиолокационное зондирование">
+    <title>Система контроля процессов</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2-main-3.css" rel="stylesheet">
+    <link href="./dist/css/headers.css" rel="stylesheet">
+    <link href="./dist/css/sign-in.css" rel="stylesheet">
+    <link href="./dist/css/navbar-fixed.css" rel="stylesheet">
+    <link href="./dist/css/font.css" rel="stylesheet">
+    <link href="./dist/css/product.css" rel="stylesheet">
+    <link href="./dist/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./dist/css/features.css" rel="stylesheet">
+    <link href="./dist/css/sidebars.css" rel="stylesheet">
+    <link href="./dist/css/radar-rse.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <div class="me-2">
+            <a class="mk-brend img-fluid" href="index.html">
+              <img src="./dist/img/logo.svg" alt="">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Меню</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
+                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="./img/doc01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
+                    Разделы
+                  </a>
+                  <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 dropdown-menu-end">
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="og.html"><i class="bi bi-record-circle-fill pe-3 mk-ico-01"></i>Орбитальные группировки</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="rockets.html"><i class="bi bi-rocket-fill pe-3 mk-ico-01"></i>Ракеты-носители</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="iss.html"><i class="bi bi-x-diamond-fill pe-3 mk-ico-01"></i>МКС</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="spaceports.html"><i class="bi bi-globe-europe-africa pe-3 mk-ico-01"></i>Космодромы</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="news01.html"><i class="bi bi-globe2 pe-3 mk-ico-01"></i>Новости</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="analysis.html"><i class="bi bi-opencollective pe-3 mk-ico-01"></i>Анализ данных. ИИ</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
+                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="./img/user01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
+                    Личный кабинет
+                  </a>
+                  <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 dropdown-menu-end">
+                    <li><a class="dropdown-item rounded-2" href="user.html">Профиль</a></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Мои документы</a></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Избранное</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Выйти</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="dropdown bottom-0 end-0 bd-mode-toggle link-body-emphasis mt-1 z-2">
+                <button class="btn btn-sm btn-outline-secondary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                  <svg class="bi theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0" aria-labelledby="bd-theme-text">
+                  <li><button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="light" aria-pressed="false"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                  <li><button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="dark" aria-pressed="false"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                  <li><button type="button" class="dropdown-item d-flex align-items-center active rounded-2 my-1" data-bs-theme-value="auto" aria-pressed="true"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="album mt-3 bg-body-tertiary">
+        <div class="container">
+          <nav aria-label="breadcrumb d-flex justify-content-start">
+            <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
+              <li class="breadcrumb-item">
+                <a class="link-body-emphasis" href="index.html"><i class="bi bi-house-door-fill"></i></a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="rse.html">ДЗЗ</a>
+              </li>
+              <li class="breadcrumb-item active text-truncate" aria-current="page">Радиолокационное зондирование</li>
+            </ol>
+          </nav>
+
+          <div class="mb-3 mt-2">
+            <div class="d-flex align-items-start mb-3">
+              <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <i class="bi bi-broadcast-pin"></i>
+              </div>
+              <div>
+                <h1 class="mk-bold">Радиолокационное зондирование</h1>
+                <p class="text-body-secondary mb-0">Быстрый доступ к статистике, группировкам и будущему поиску по данным.</p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <a href="rse.html" class="btn btn-outline-secondary rounded-pill px-3 radar-back">
+                <i class="bi bi-arrow-left me-2"></i>Назад
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 g-3 mb-4">
+          <div class="col">
+            <button type="button" class="radar-select filter-btn" data-group="Раздел" data-value="Статистические данные">
+              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-start mb-3">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                      <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <h3 class="mk-bold fs-4 mb-0">Статистические данные<br><span class="text-body-secondary fs-6">(графики запусков, численности)</span></h3>
+                  </div>
+                  <div class="card-hint mb-0">
+                    В разделе находятся сводные показатели по запускам, динамике числа аппаратов и общим количественным характеристикам.
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+
+          <div class="col">
+            <a href="radar-groups.html" class="radar-select">
+              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-start mb-3">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                      <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h3 class="mk-bold fs-4 mb-0">Группировки<br><span class="text-body-secondary fs-6">(по странам, по массе)</span></h3>
+                  </div>
+                  <div class="card-hint mb-0">
+                    В этом разделе можно будет быстро переходить к сравнению радиолокационных группировок по странам, классам и весовым категориям аппаратов.
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="radar-search.html" class="radar-select">
+              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-start mb-3">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                      <i class="bi bi-search"></i>
+                    </div>
+                    <h3 class="mk-bold fs-4 mb-0">Поиск информации</h3>
+                  </div>
+                  <div class="card-hint mb-0">
+                    Переход на отдельную страницу поиска по стране, названию группировки и связанным характеристикам спутников.
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="border rounded-3 p-4 mb-4 bg-body-tertiary">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="mk-bold fs-4 mb-0">Лента новостей</h2>
+            <span class="small text-body-secondary">Материалы как на главной странице</span>
+          </div>
+
+          <div class="border mk-back4 mb-2">
+            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
+              <div class="row">
+                <div class="col-lg-3 col-md-5">
+                  <div class="row">
+                    <div class="col-xl-12 p-3">
+                      <div class="p-2 rounded-3 border card">
+                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-01.jpg" alt="" style="min-width:100%"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-7 p-3">
+                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">NASA изменило правила для создания коммерческих орбитальных станций, фактически выбрав преемника МКС</a></h2>
+                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border mk-back4 mb-2">
+            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
+              <div class="row">
+                <div class="col-lg-3 col-md-5">
+                  <div class="row">
+                    <div class="col-xl-12 p-3">
+                      <div class="p-2 rounded-3 border card">
+                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-02.jpg" alt="" style="min-width:100%"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-7 p-3">
+                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">Доработка платформы, разработка новых модулей, внедрение на предприятиях отрасли</a></h2>
+                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border mk-back4 mb-2">
+            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
+              <div class="row">
+                <div class="col-lg-3 col-md-5">
+                  <div class="row">
+                    <div class="col-xl-12 p-3">
+                      <div class="p-2 rounded-3 border card">
+                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-03.jpg" alt="" style="min-width:100%"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-7 p-3">
+                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">Космонавты проводят техническое обслуживание систем обеспечения жизнедеятельности МКС</a></h2>
+                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border mk-back4 mb-2">
+            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
+              <div class="row">
+                <div class="col-lg-3 col-md-5">
+                  <div class="row">
+                    <div class="col-xl-12 p-3">
+                      <div class="p-2 rounded-3 border card">
+                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-04.jpg" alt="" style="min-width:100%"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-7 p-3">
+                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">На МКС исследуют плазменно-пылевые кристаллы и жидкости</a></h2>
+                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="album py-4 bg-body-tertiary">
+        <div class="container py-4">
+          <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Главная</a></li>
+              <li class="nav-item"><a href="rse.html" class="nav-link px-2 text-body-secondary">ДЗЗ</a></li>
+              <li class="nav-item"><a href="news01.html" class="nav-link px-2 text-body-secondary">Новости</a></li>
+            </ul>
+            <div class="py-2 text-center">
+              <a href="index.html"><img src="./dist/img/logo.svg" alt=""></a>
+            </div>
+            <p class="text-center text-body-secondary">2024-2026</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <script src="./dist/js/fslightbox.js"></script>
+    <script src="./dist/js/lazysizes.min.js"></script>
+    <script src="./dist/js/radar-rse.js"></script>
+  </body>
+</html>

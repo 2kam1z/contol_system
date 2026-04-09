@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229166"
+   version="1.1"
+   id="svg185"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="s01.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="5.6411676"
+     inkscape:cx="-12.320145"
+     inkscape:cy="-19.676778"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs182">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-71"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path425"
+       style="fill:#9181b1;fill-opacity:1;stroke:none;stroke-width:0.124346;stroke-linecap:round"
+       d="M 6.6145832,0.21951908 C 3.0828147,0.21958528 0.21958535,3.0828146 0.21951915,6.6145832 0.21958545,10.146353 3.0828147,13.009581 6.6145832,13.009647 10.146353,13.009581 13.009581,10.146353 13.009647,6.6145832 13.009581,3.0828146 10.146353,0.21958538 6.6145832,0.21951908 Z M 3.4637069,3.4506867 h 6.3017535 c 0.06889,0 0.126454,0.017658 0.175338,0.042098 0.0511,0.033329 0.1022826,0.075416 0.1267286,0.1354095 0.03332,0.048884 0.04903,0.1091127 0.04903,0.1757721 v 5.623838 c 0,0.06666 -0.01571,0.124233 -0.04903,0.175337 -0.02443,0.05999 -0.07562,0.108743 -0.1267286,0.13541 -0.04889,0.03334 -0.106454,0.03992 -0.175338,0.03992 H 3.4637069 c -0.06666,0 -0.1242323,-0.0065 -0.175338,-0.03992 -0.048884,-0.02667 -0.1001171,-0.07541 -0.1245594,-0.13541 -0.03333,-0.0511 -0.051213,-0.108678 -0.051213,-0.175337 V 3.8039668 c 0,-0.06666 0.017883,-0.1268883 0.051212,-0.175772 0.024442,-0.059994 0.075676,-0.1087456 0.1245594,-0.1354095 0.051106,-0.033329 0.1086782,-0.042098 0.175339,-0.042099 z M 4.5170373,4.861637 V 8.3701337 H 5.5703675 V 4.861637 Z m 1.4044403,0 V 8.3701337 H 6.6232638 V 4.861637 Z m 1.0377057,0 V 8.3701337 H 7.3098597 V 4.861637 Z m 0.7017862,0 V 8.3701337 H 8.7142994 V 4.861637 Z" />
+  </g>
+</svg>

@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ru" data-bs-theme="auto">
+  <head>
+    <script src="./dist/js/color-modes.js"></script>
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Радиолокационные группировки">
+    <title>Система контроля процессов</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2-main-3.css" rel="stylesheet">
+    <link href="./dist/css/headers.css" rel="stylesheet">
+    <link href="./dist/css/sign-in.css" rel="stylesheet">
+    <link href="./dist/css/navbar-fixed.css" rel="stylesheet">
+    <link href="./dist/css/font.css" rel="stylesheet">
+    <link href="./dist/css/product.css" rel="stylesheet">
+    <link href="./dist/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./dist/css/features.css" rel="stylesheet">
+    <link href="./dist/css/sidebars.css" rel="stylesheet">
+    <link href="./dist/css/radar-groups.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <div class="me-2">
+            <a class="mk-brend img-fluid" href="index.html">
+              <img src="./dist/img/logo.svg" alt="">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Меню</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
+                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="./img/doc01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
+                    Разделы
+                  </a>
+                  <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 dropdown-menu-end">
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="og.html"><i class="bi bi-record-circle-fill pe-3 mk-ico-01"></i>Орбитальные группировки</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="rockets.html"><i class="bi bi-rocket-fill pe-3 mk-ico-01"></i>Ракеты-носители</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="iss.html"><i class="bi bi-x-diamond-fill pe-3 mk-ico-01"></i>МКС</a></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="spaceports.html"><i class="bi bi-globe-europe-africa pe-3 mk-ico-01"></i>Космодромы</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="news01.html"><i class="bi bi-globe2 pe-3 mk-ico-01"></i>Новости</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="analysis.html"><i class="bi bi-opencollective pe-3 mk-ico-01"></i>Анализ данных. ИИ</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
+                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="./img/user01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
+                    Личный кабинет
+                  </a>
+                  <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 dropdown-menu-end">
+                    <li><a class="dropdown-item rounded-2" href="user.html">Профиль</a></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Мои документы</a></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Избранное</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item rounded-2" href="user.html">Выйти</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="dropdown bottom-0 end-0 bd-mode-toggle link-body-emphasis mt-1 z-2">
+                <button class="btn btn-sm btn-outline-secondary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                  <svg class="bi theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0" aria-labelledby="bd-theme-text">
+                  <li><button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="light" aria-pressed="false"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                  <li><button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="dark" aria-pressed="false"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                  <li><button type="button" class="dropdown-item d-flex align-items-center active rounded-2 my-1" data-bs-theme-value="auto" aria-pressed="true"><svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg></button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="album mt-3 bg-body-tertiary">
+        <div class="container">
+          <nav aria-label="breadcrumb d-flex justify-content-start">
+            <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
+              <li class="breadcrumb-item"><a class="link-body-emphasis" href="index.html"><i class="bi bi-house-door-fill"></i></a></li>
+              <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="rse.html">ДЗЗ</a></li>
+              <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="radar-rse.html">Радиолокационное зондирование</a></li>
+              <li class="breadcrumb-item active text-truncate" aria-current="page">Группировки</li>
+            </ol>
+          </nav>
+
+          <div class="mb-3 mt-2">
+            <div class="d-flex align-items-start mb-3">
+              <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <div>
+                <h1 class="mk-bold">Группировки</h1>
+                <p class="text-body-secondary mb-0">Структура выбора по странам, классам массы и рабочим диапазонам.</p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <a href="radar-rse.html" class="btn btn-outline-secondary rounded-pill px-3 back-btn">
+                <i class="bi bi-arrow-left me-2"></i>Назад
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="border rounded-3 p-4 mb-4 bg-body-tertiary">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="mk-bold fs-4 mb-0">Группировки по странам и массе</h2>
+            <span class="small text-body-secondary">Раскрывающиеся блоки быстрого выбора</span>
+          </div>
+
+          <div class="d-grid gap-3">
+            <div class="group-block p-3">
+              <button class="group-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#country-us-canada" aria-expanded="false" aria-controls="country-us-canada">
+                <span><strong>США / Канада</strong><span class="group-meta d-block">Выбор по массе и диапазонам</span></span>
+                <span><i class="bi bi-chevron-down"></i></span>
+              </button>
+              <div class="collapse mt-3" id="country-us-canada">
+                <div class="d-grid gap-2">
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#us-heavy" aria-expanded="false" aria-controls="us-heavy">
+                      <span><i class="bi bi-check2-circle me-2"></i>Крупногабаритные свыше 1000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="us-heavy">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, S, L</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#us-small" aria-expanded="false" aria-controls="us-small">
+                      <span><i class="bi bi-check2-circle me-2"></i>Малые до 2000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="us-small">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, Ku</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#us-mini" aria-expanded="false" aria-controls="us-mini">
+                      <span><i class="bi bi-check2-circle me-2"></i>Мини до 100 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="us-mini">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="group-block p-3">
+              <button class="group-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#country-europe" aria-expanded="false" aria-controls="country-europe">
+                <span><strong>Европа</strong><span class="group-meta d-block">Аналогичная структура выбора</span></span>
+                <span><i class="bi bi-chevron-down"></i></span>
+              </button>
+              <div class="collapse mt-3" id="country-europe">
+                <div class="d-grid gap-2">
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#eu-heavy" aria-expanded="false" aria-controls="eu-heavy">
+                      <span><i class="bi bi-check2-circle me-2"></i>Крупногабаритные свыше 1000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="eu-heavy">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, L</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#eu-small" aria-expanded="false" aria-controls="eu-small">
+                      <span><i class="bi bi-check2-circle me-2"></i>Малые до 2000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="eu-small">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#eu-mini" aria-expanded="false" aria-controls="eu-mini">
+                      <span><i class="bi bi-check2-circle me-2"></i>Мини до 100 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="eu-mini">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="group-block p-3">
+              <button class="group-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#country-china" aria-expanded="false" aria-controls="country-china">
+                <span><strong>Китай</strong><span class="group-meta d-block">Выбор по массе и диапазонам</span></span>
+                <span><i class="bi bi-chevron-down"></i></span>
+              </button>
+              <div class="collapse mt-3" id="country-china">
+                <div class="d-grid gap-2">
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#cn-heavy" aria-expanded="false" aria-controls="cn-heavy">
+                      <span><i class="bi bi-check2-circle me-2"></i>Крупногабаритные свыше 1000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="cn-heavy">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, L</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#cn-small" aria-expanded="false" aria-controls="cn-small">
+                      <span><i class="bi bi-check2-circle me-2"></i>Малые до 2000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="cn-small">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, S, Ku</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#cn-mini" aria-expanded="false" aria-controls="cn-mini">
+                      <span><i class="bi bi-check2-circle me-2"></i>Мини до 100 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="cn-mini">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="group-block p-3">
+              <button class="group-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#country-jp-kr" aria-expanded="false" aria-controls="country-jp-kr">
+                <span><strong>Япония / Южная Корея</strong><span class="group-meta d-block">Аналогичные пункты выбора</span></span>
+                <span><i class="bi bi-chevron-down"></i></span>
+              </button>
+              <div class="collapse mt-3" id="country-jp-kr">
+                <div class="d-grid gap-2">
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#jpkr-heavy" aria-expanded="false" aria-controls="jpkr-heavy">
+                      <span><i class="bi bi-check2-circle me-2"></i>Крупногабаритные свыше 1000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="jpkr-heavy">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, L, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#jpkr-small" aria-expanded="false" aria-controls="jpkr-small">
+                      <span><i class="bi bi-check2-circle me-2"></i>Малые до 2000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="jpkr-small">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#jpkr-mini" aria-expanded="false" aria-controls="jpkr-mini">
+                      <span><i class="bi bi-check2-circle me-2"></i>Мини до 100 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="jpkr-mini">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="group-block p-3">
+              <button class="group-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#country-india" aria-expanded="false" aria-controls="country-india">
+                <span><strong>Индия</strong><span class="group-meta d-block">Аналогичные пункты выбора</span></span>
+                <span><i class="bi bi-chevron-down"></i></span>
+              </button>
+              <div class="collapse mt-3" id="country-india">
+                <div class="d-grid gap-2">
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#in-heavy" aria-expanded="false" aria-controls="in-heavy">
+                      <span><i class="bi bi-check2-circle me-2"></i>Крупногабаритные свыше 1000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="in-heavy">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#in-small" aria-expanded="false" aria-controls="in-small">
+                      <span><i class="bi bi-check2-circle me-2"></i>Малые до 2000 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="in-small">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, C</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="mass-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#in-mini" aria-expanded="false" aria-controls="in-mini">
+                      <span><i class="bi bi-check2-circle me-2"></i>Мини до 100 кг</span>
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse mt-2 ms-3" id="in-mini">
+                      <button type="button" class="range-toggle"><span>Диапазоны: X, S</span><span><i class="bi bi-check-lg"></i></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border rounded-3 p-4 mb-4 bg-body-tertiary">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="mk-bold fs-4 mb-0">Формирование выборки</h2>
+            <span class="small text-body-secondary">Подготовлено для будущего подключения базы данных</span>
+          </div>
+
+          <div class="border rounded-3 p-3 mb-4 bg-body-tertiary">
+            <div class="small text-body-secondary mb-2">Выбранные параметры</div>
+            <div id="selectedParams" class="d-flex flex-wrap gap-2">
+              <span class="text-body-secondary small">Пока параметры не выбраны</span>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-lg-4">
+              <div class="mode-card p-3 h-100">
+                <h3 class="mk-bold fs-5 mb-3">Режим просмотра</h3>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-outline-secondary text-start mode-btn active" data-mode="Низкая орбита">Низкая орбита</button>
+                  <button type="button" class="btn btn-outline-secondary text-start mode-btn" data-mode="Группировки">Группировки</button>
+                  <button type="button" class="btn btn-outline-secondary text-start mode-btn" data-mode="Отдельные спутники">Отдельные спутники</button>
+                  <button type="button" class="btn btn-outline-secondary text-start mode-btn" data-mode="Просмотр всех характеристик">Просмотр всех характеристик</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8">
+              <div class="sat-card p-3 h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h3 class="mk-bold fs-5 mb-0">Спутники и группировки</h3>
+                  <span class="small text-body-secondary">Заглушки до подключения БД</span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <button type="button" class="sat-item w-100 text-start sat-btn active" data-target="sat-1">
+                      <strong>SAR Observer A1</strong>
+                      <div class="small text-body-secondary mt-1">США / Канада, крупногабаритные, X/C/S/L</div>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="sat-item w-100 text-start sat-btn" data-target="sat-2">
+                      <strong>Europe Radar Node</strong>
+                      <div class="small text-body-secondary mt-1">Европа, малые, X/C/S</div>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="sat-item w-100 text-start sat-btn" data-target="sat-3">
+                      <strong>Dragon SAR Cluster</strong>
+                      <div class="small text-body-secondary mt-1">Китай, крупногабаритные, X/C/L</div>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="sat-item w-100 text-start sat-btn" data-target="sat-4">
+                      <strong>Indo Scan Mini</strong>
+                      <div class="small text-body-secondary mt-1">Индия, мини, X/S</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-3 p-4 mb-3 bg-body-tertiary">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h3 class="mk-bold fs-5 mb-0">Карточка объекта</h3>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="PDF">PDF</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="Excel">Excel</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="DOC">DOC</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="HTML">HTML</button>
+              </div>
+            </div>
+            <div class="row g-4 align-items-start">
+              <div class="col-lg-4">
+                <div class="p-2 rounded-3 border card">
+                  <img id="satImage" class="img-fluid rounded" src="./dist/img/mkimg-01.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <h4 id="satTitle" class="mk-bold">SAR Observer A1</h4>
+                <p id="satMeta" class="text-body-secondary">США / Канада, крупногабаритные, диапазоны X/C/S/L</p>
+                <div id="exportMessage" class="small text-body-secondary mb-3">Экспорт пока работает как интерфейс-заглушка. После подключения базы данных будет формироваться реальный файл.</div>
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                      </tr>
+                    </thead>
+                    <tbody id="satTableBody">
+                      <tr><td>Страна</td><td>США / Канада</td></tr>
+                      <tr><td>Класс массы</td><td>Крупногабаритные свыше 1000 кг</td></tr>
+                      <tr><td>Диапазоны</td><td>X, C, S, L</td></tr>
+                      <tr><td>Орбита</td><td>Низкая орбита</td></tr>
+                      <tr><td>Назначение</td><td>Радиолокационное наблюдение поверхности</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-3 p-4 mb-3 bg-body-tertiary">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h3 class="mk-bold fs-5 mb-0">Построение орбиты</h3>
+              <span id="orbitCaption" class="small text-body-secondary">Схема полета выбранных спутников</span>
+            </div>
+            <div class="orbit-board">
+              <svg id="orbitSvg" class="orbit-svg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-label="Схема орбиты">
+                <defs>
+                  <radialGradient id="earthGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#66b6ff"/>
+                    <stop offset="70%" stop-color="#2c7be5"/>
+                    <stop offset="100%" stop-color="#133c75"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="230" cy="210" r="58" fill="url(#earthGlow)" opacity="0.95"/>
+                <circle cx="230" cy="210" r="72" fill="none" stroke="rgba(13,110,253,0.15)" stroke-width="18"/>
+                <text x="230" y="215" text-anchor="middle" class="orbit-label">Земля</text>
+                <ellipse cx="230" cy="210" rx="150" ry="88" fill="none" stroke="rgba(13,110,253,0.35)" stroke-width="2" stroke-dasharray="8 8"/>
+                <ellipse cx="230" cy="210" rx="200" ry="118" fill="none" stroke="rgba(25,135,84,0.35)" stroke-width="2" stroke-dasharray="10 10"/>
+                <ellipse cx="230" cy="210" rx="250" ry="148" fill="none" stroke="rgba(255,193,7,0.35)" stroke-width="2" stroke-dasharray="12 12"/>
+                <g id="orbitSatellites"></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./dist/js/radar-groups.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229166"
+   version="1.1"
+   id="svg185"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="s04.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="5.6411676"
+     inkscape:cx="-15.067803"
+     inkscape:cy="-19.676778"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs182">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-71"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-3"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-1"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path425"
+       style="fill:#6bcccd;fill-opacity:1;stroke:none;stroke-width:0.124346;stroke-linecap:round"
+       d="M 6.6145833 0.21962484 C 3.082822 0.21969104 0.21969104 3.0828219 0.21962484 6.6145833 C 0.21969114 10.146347 3.082822 13.009476 6.6145833 13.009542 C 10.146347 13.009476 13.009476 10.146347 13.009542 6.6145833 C 13.009476 3.0828219 10.146347 0.21969114 6.6145833 0.21962484 z M 5.5640015 3.4845418 C 6.1401217 3.4845418 6.6145833 3.9523043 6.6145833 4.5325399 C 6.6145833 5.1127753 6.1401217 5.59139 5.5640015 5.59139 C 4.9865092 5.59139 4.5227214 5.1127753 4.5227214 4.5325399 C 4.5227214 3.9523043 4.9865092 3.4845418 5.5640015 3.4845418 z M 4.2167969 5.3407593 C 4.5226894 5.3407593 4.7599605 5.4995294 4.9190796 5.7505534 C 5.1563863 6.137377 5.5965576 7.6630981 5.5965576 7.6630981 L 7.5540609 7.6630981 C 7.8928749 7.6630981 8.1302531 7.9014153 8.1302531 8.2196533 L 9.3870239 8.2196533 L 10.223665 5.7619222 L 10.663949 5.9097168 L 9.7709798 8.5271281 C 9.7366869 8.6190338 9.646019 8.6862915 9.5554891 8.6862915 L 2.5652181 8.6862915 C 2.599511 7.8673777 2.7804974 7.0250894 3.1083374 6.3200277 C 3.3689633 5.750766 3.7312097 5.3407593 4.2167969 5.3407593 z " />
+  </g>
+</svg>

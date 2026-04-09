@@ -1,0 +1,138 @@
+@font-face  {
+
+    font-family: 'golostextvf-regular';
+    src: url('../fonts/golostextvf-regular.eot');
+    src: url('../fonts/golostextvf-regular.eot') format('embedded-opentype'),
+    url('../fonts/golostextvf-regular.ttf') format('truetype'),
+    url('../fonts/golostextvf-regular.woff') format('woff'),
+    url('../fonts/golostextvf-regular.svg') 
+    format('svg');
+}
+
+@font-face  {
+
+    font-family: 'golosuivf-regular';
+    src: url('../fonts/golosuivf-regular.eot');
+    src: url('../fonts/golosuivf-regular.eot') format('embedded-opentype'),
+    url('../fonts/golosuivf-regular.ttf') format('truetype'),
+    url('../fonts/golosuivf-regular.woff') format('woff'),
+    url('../fonts/golosuivf-regular.svg') 
+    format('svg');
+}
+
+
+
+@font-face  {
+
+    font-family: 'GolosText-Black';src: url('../fonts/GolosText-Black');
+    src: url('../fonts/GolosText-Black.eot') format('embedded-opentype'),url('../fonts/GolosText-Black.ttf') format('truetype'),url('../fonts/GolosText-Black.woff') format('woff'),url('../fonts/GolosText-Black.svg') 
+    format('svg');
+
+
+    }
+
+    @font-face  {
+
+        font-family: 'golos-ui_bold';src: url('../fonts/golos-ui_bold.eot');
+        src: url('../fonts/golos-ui_bold.eot') format('embedded-opentype'),url('../fonts/golos-ui_bold.ttf') format('truetype'),url('../fonts/golos-ui_bold.woff') format('woff'),url('../fonts/golos-ui_bold.svg') 
+        format('svg');
+    
+        }
+
+
+        @font-face  {
+
+            font-family: 'GolosText-Bold';src: url('../fonts/GolosText-Bold.eot');
+            src: url('../fonts/GolosText-Bold.eot') format('embedded-opentype'),url('../fonts/GolosText-Bold.ttf') format('truetype'),url('../fonts/GolosText-Bold.woff') format('woff'),url('../fonts/GolosText-Bold.svg') 
+            format('svg');
+        
+            }
+    
+
+            @font-face  {
+
+                font-family: 'golos-ui_regular';src: url('../fonts/golos-ui_regular.eot');
+                src: url('../fonts/golos-ui_regular.eot') 
+                format('embedded-opentype'),url('../fonts/golos-ui_regular.ttf') 
+                format('truetype'),url('../fonts/golos-ui_regular.woff') 
+                format('woff'),url('../fonts/golos-ui_regular.svg') 
+                format('svg');
+            
+                }
+
+
+                /***/
+
+
+                @font-face {
+                    font-family: 'GolosTextWebBlack';
+                    src: 
+                        url('../fonts/Golos-Text_Black.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_Black.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+                
+                @font-face {
+                    font-family: 'GolosTextWebBold';
+                    src: 
+                        url('../fonts/Golos-Text_Bold.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_Bold.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+                
+                @font-face {
+                    font-family: 'GolosTextWebDemiBold';
+                    src: 
+                        url('../fonts/Golos-Text_DemiBold.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_DemiBold.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+                @font-face {
+                    font-family: 'GolosTextWebMedium';
+                    src: 
+                        url('../fonts/Golos-Text_Medium.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_Medium.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+                @font-face {
+                    font-family: 'GolosTextWebRegular';
+                    src: 
+                        url('../fonts/Golos-Text_Regular.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_Regular.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                
+                @font-face {
+                    font-family: 'GolosTextWebVF';
+                    src: 
+                        url('../fonts/Golos-Text_VF.woff2') format('woff2'),
+                        url('../fonts/Golos-Text_VF.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+
+
+                /***/
+
+
+                @font-face  {
+
+                    font-family: 'bootstrap-icons';src: url('../fonts/bootstrap-icons.eot');
+                    src: url('../fonts/bootstrap-icons.eot') 
+                    format('embedded-opentype'),url('../fonts/bootstrap-icons.ttf') 
+                    format('truetype'),url('../fonts/bootstrap-icons.woff') 
+                    format('woff'),url('../fonts/bootstrap-icons.svg') 
+                    format('svg');
+                
+                    }
+
+                

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229166"
+   version="1.1"
+   id="svg185"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="s03.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="5.6411676"
+     inkscape:cx="-15.067803"
+     inkscape:cy="-19.676778"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs182">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-71"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-3"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path425"
+       style="fill:#58a7da;fill-opacity:1;stroke:none;stroke-width:0.124346;stroke-linecap:round"
+       d="M 6.6145833 0.21962484 C 3.0828184 0.21969104 0.21969104 3.0828183 0.21962484 6.6145833 C 0.21969114 10.14635 3.0828184 13.009476 6.6145833 13.009542 C 10.14635 13.009476 13.009476 10.14635 13.009542 6.6145833 C 13.009476 3.0828183 10.14635 0.21969114 6.6145833 0.21962484 z M 3.8659139 3.554305 L 9.3658366 3.554305 C 9.7366155 3.554305 10.051583 3.857028 10.051583 4.2307495 L 10.051583 9.001001 C 10.051583 9.3747231 9.7366155 9.6748617 9.3658366 9.6748617 L 3.8659139 9.6748617 C 3.4951349 9.6748617 3.1775838 9.3747231 3.1775838 9.001001 L 3.1775838 4.2307495 C 3.1775838 3.857028 3.4951349 3.554305 3.8659139 3.554305 z M 7.3178996 4.5873169 L 7.3178996 5.2611776 L 7.9917603 5.2611776 L 7.9917603 4.5873169 L 7.3178996 4.5873169 z M 8.3333415 4.5873169 L 8.3333415 5.2611776 L 9.0216715 5.2611776 L 9.0216715 4.5873169 L 8.3333415 4.5873169 z M 3.8659139 5.9350382 L 3.8659139 9.001001 L 9.3658366 9.001001 L 9.3658366 5.9350382 L 3.8659139 5.9350382 z " />
+  </g>
+</svg>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229166"
+   version="1.1"
+   id="svg185"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="s11.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="7.9778157"
+     inkscape:cx="18.175401"
+     inkscape:cy="30.083422"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs182">
+    <linearGradient
+       id="linearGradient7585"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#ceb935;stop-opacity:1;"
+         offset="0"
+         id="stop7583" />
+    </linearGradient>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-71"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-3"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-1"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-4"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-52"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-6"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-38"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7585"
+       id="linearGradient7587"
+       x1="0.21962484"
+       y1="6.6145834"
+       x2="13.009542"
+       y2="6.6145834"
+       gradientUnits="userSpaceOnUse" />
+    <pattern
+       id="EMFhbasepattern-0"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-8"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-57"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-55"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path425"
+       style="fill:url(#linearGradient7587);fill-opacity:1;stroke:none;stroke-width:0.124346;stroke-linecap:round"
+       d="M 6.6145833 0.21962484 C 3.0828436 0.21969104 0.21969104 3.0828435 0.21962484 6.6145833 C 0.21969114 10.146329 3.0828436 13.009476 6.6145833 13.009542 C 10.146329 13.009476 13.009476 10.146329 13.009542 6.6145833 C 13.009476 3.0828435 10.146329 0.21969114 6.6145833 0.21962484 z M 4.5666463 2.931604 L 4.9769572 2.931604 L 4.9769572 3.7491252 L 4.5666463 3.7491252 C 4.4872764 3.7491252 4.4187245 3.7677724 4.3578735 3.8101034 C 4.2970236 3.8497883 4.2493103 3.8975638 4.2069784 3.9584147 C 4.1672884 4.0192657 4.159436 4.0878167 4.159436 4.1671875 L 4.159436 5.8394368 C 4.159436 5.9875957 4.1171206 6.1170084 4.0483317 6.2466471 C 3.9689618 6.3657034 3.8684287 6.4768182 3.7387899 6.556189 C 3.6885199 6.5747089 3.6381626 6.6063986 3.5878947 6.6249186 C 3.6381646 6.6249186 3.6885219 6.6570415 3.7387899 6.6755615 C 3.8684287 6.7549324 3.9689608 6.8660473 4.0483317 6.9851034 C 4.1171216 7.1147424 4.159436 7.2415093 4.159436 7.3923136 L 4.159436 9.064563 C 4.159436 9.1439329 4.1672584 9.2124848 4.2069784 9.2733358 C 4.2493083 9.3341857 4.2970186 9.3819612 4.3578735 9.4216471 C 4.4187235 9.4613371 4.4872754 9.4826253 4.5666463 9.4826253 L 4.9769572 9.4826253 L 4.9769572 10.297563 L 4.5666463 10.297563 C 4.3470535 10.297563 4.1380525 10.239117 3.9475627 10.130648 C 3.7570729 10.030112 3.6090966 9.8715536 3.4979777 9.6810628 C 3.3895038 9.493219 3.328479 9.2841548 3.328479 9.064563 L 3.328479 7.5509603 C 3.328479 7.4424868 3.299684 7.3419547 3.2494141 7.2414185 C 3.1991441 7.1541105 3.1088911 7.0830996 3.0189372 7.0248942 C 2.9184013 6.9746263 2.8205142 6.9344604 2.7093953 6.9344604 L 2.508374 6.9344604 L 2.508374 6.29729 L 2.7093953 6.29729 C 2.8205142 6.29729 2.9184013 6.257642 3.0189372 6.207373 C 3.1088871 6.1491681 3.1991451 6.0777016 3.2494141 5.9877482 C 3.299684 5.8898573 3.328479 5.7892637 3.328479 5.6807902 L 3.328479 4.1671875 C 3.328479 3.9475949 3.3895028 3.7385319 3.4979777 3.5506877 C 3.6090966 3.3601987 3.7570729 3.201639 3.9475627 3.1011027 C 4.1380525 2.9926292 4.3470535 2.931604 4.5666463 2.931604 z M 8.2547933 2.931604 L 8.6651042 2.931604 C 8.8846969 2.931604 9.093698 2.9926292 9.2841878 3.1011027 C 9.4720326 3.201639 9.6226529 3.3601977 9.7337728 3.5506877 C 9.8422457 3.7385319 9.9032715 3.9475949 9.9032715 4.1671875 L 9.9032715 5.6807902 C 9.9032715 5.7892637 9.9320665 5.8898575 9.9823364 5.9877482 C 10.032606 6.0777021 10.122859 6.1491677 10.212813 6.207373 C 10.313349 6.257641 10.411236 6.29729 10.522355 6.29729 L 10.720793 6.29729 L 10.720793 6.9344604 L 10.522355 6.9344604 C 10.411236 6.9344604 10.313349 6.9746253 10.212813 7.0248942 C 10.122863 7.0831001 10.032604 7.1541105 9.9823364 7.2414185 C 9.9320665 7.3419547 9.9032715 7.4424868 9.9032715 7.5509603 L 9.9032715 9.064563 C 9.9032715 9.2841558 9.8422477 9.493219 9.7337728 9.6810628 C 9.6226539 9.8715536 9.4720316 10.030111 9.2841878 10.130648 C 9.093698 10.239121 8.8846969 10.297563 8.6651042 10.297563 L 8.2547933 10.297563 L 8.2547933 9.4826253 L 8.6651042 9.4826253 C 8.7444741 9.4826253 8.813026 9.4613271 8.873877 9.4216471 C 8.9347269 9.3819572 8.9824412 9.3341847 9.0247721 9.2733358 C 9.0644521 9.2124858 9.0723145 9.1439339 9.0723145 9.064563 L 9.0723145 7.3923136 C 9.0723145 7.2415093 9.1146299 7.1147424 9.1834188 6.9851034 C 9.2627887 6.8660473 9.3633217 6.7549322 9.4929606 6.6755615 C 9.5432306 6.6570415 9.5935868 6.6249186 9.6438558 6.6249186 C 9.5935858 6.6063986 9.5432286 6.5747089 9.4929606 6.556189 C 9.3633237 6.4768168 9.2627897 6.3657034 9.1834188 6.2466471 C 9.1146309 6.1170084 9.0723145 5.9875957 9.0723145 5.8394368 L 9.0723145 4.1671875 C 9.0723145 4.0878166 9.0644921 4.0192657 9.0247721 3.9584147 C 8.9824422 3.8975638 8.9347319 3.8497887 8.873877 3.8101034 C 8.813027 3.7677724 8.7444751 3.7491252 8.6651042 3.7491252 L 8.2547933 3.7491252 L 8.2547933 2.931604 z " />
+  </g>
+</svg>

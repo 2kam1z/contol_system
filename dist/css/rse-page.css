@@ -1,0 +1,24 @@
+.rse-action {
+  border-width: 1px;
+  font-weight: 500;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.rse-action:hover,
+.rse-action:focus {
+  transform: scale(1.04);
+  background-color: var(--bs-primary-bg-subtle);
+  border-color: var(--bs-primary);
+  color: var(--bs-emphasis-color);
+  box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12);
+}
+
+.rse-back {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.rse-back:hover,
+.rse-back:focus {
+  transform: translateX(-2px);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}

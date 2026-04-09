@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="150"
+   height="150"
+   viewBox="0 0 39.687499 39.6875"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="..\ITSM-03m\img\doc01.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="doc01.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.3786088"
+     inkscape:cx="72.100969"
+     inkscape:cy="158.91642"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-4"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke-width:0.393171;stroke-linecap:round"
+       id="rect353"
+       width="39.6875"
+       height="39.6875"
+       x="0"
+       y="0" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.60445"
+       d="m 19.891869,1.1046727 c -10.0914899,0 -18.6588319,8.6315296 -18.6588319,18.7872083 0,10.123592 8.567342,18.690946 18.6588319,18.690946 10.011319,0 18.562594,-8.567354 18.562594,-18.690946 0,-10.1556787 -8.551275,-18.7872083 -18.562594,-18.7872083 z"
+       id="path185"
+       sodipodi:nodetypes="sssss" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.906018"
+       d="m 13.873183,9.3203518 c -0.380507,0 -0.797254,0.09061 -1.096226,0.2989779 -0.335206,0.2083695 -0.543583,0.4167473 -0.751957,0.7519573 -0.208369,0.289903 -0.298978,0.715718 -0.298978,1.050929 0,5.526427 0,11.089094 0,16.533988 0,0.380507 0.09061,0.761014 0.298978,1.096225 0.208371,0.289903 0.416747,0.54358 0.751957,0.751957 0.298978,0.163067 0.715719,0.2446 1.096226,0.2446 4.20371,0 8.40742,0 12.565831,0 0.425807,0 0.761018,-0.08153 1.096225,-0.2446 0.298978,-0.208369 0.543584,-0.462047 0.761018,-0.751957 0.163066,-0.335207 0.2446,-0.715718 0.2446,-1.096225 0,-4.058755 0,-8.244347 0,-12.393697 -2.056557,-2.092795 -4.203711,-4.140291 -6.21497,-6.2421487 -2.862872,0 -5.680443,0 -8.452718,0 z M 22.3259,16.649665 c -0.380507,0 -0.761014,0 -1.141525,0 0,-1.757585 0,-3.46987 0,-5.227457 1.811947,1.757587 3.533293,3.469872 5.254639,5.227457 -1.422375,0 -2.772275,0 -4.113114,0 z"
+       id="path818" />
+  </g>
+</svg>

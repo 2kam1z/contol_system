@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    
+    <script src="./dist/js/color-modes.js"></script>
+
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./dist/js/masonry.pkgd.min.js"></script>
+    
+    
+
+
+   
+    
+
+
+    
+    
+
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="...">
+    <title>Система контроля процессов</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2-main-3.css" rel="stylesheet">
+    <link href="./dist/css/headers.css" rel="stylesheet">
+    <link href="./dist/css/sign-in.css" rel="stylesheet">
+    <link href="./dist/css/navbar-fixed.css" rel="stylesheet">
+    <link href="./dist/css/font.css" rel="stylesheet">
+    <link href="./dist/css/product.css" rel="stylesheet">
+    <link href="./dist/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./dist/css/features.css" rel="stylesheet">
+    <link href="./dist/css/sidebars.css" rel="stylesheet">
+
+
+
+    <link href="./dist/css/c3.css" rel="stylesheet">
+
+
+
+<style>
+
+    </style>
+
+
+
+    
+    <!-- Custom styles for this template -->
+
+  </head>
+  <body class="bg-body-tertiary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <!-- *вертикальное вне 0-->
+    
+
+       <!-- *вертикальное вне 1-->
+    
+
+       <header>
+
+        <!-- mk-верхний фиксированный блок с меню  0 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " aria-label="Offcanvas navbar large">
+          <div class="container-fluid">
+      
+            <div class="me-2">
+            <a class="mk-brend img-fluid " href="index.html" >
+              <img src="./dist/img/logo.svg" alt="" ></a>
+            </div>
+            
+            
+
+            
+            
+      
+      
+      
+      
+      
+      
+      
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Меню</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+      
+      
+      
+      
+      
+              
+      
+      
+              <div class="offcanvas-body">
+      
+      
+      <!------------ Индикатор 0 -->
+      
+      
+      
+      
+      <!------------ Индикатор 1 -->
+      
+      
+      
+                <ul class="navbar-nav justify-content-end flex-grow-1 ">
+      
+      
+      
+      
+      
+      
+
+
+
+      
+      
+      
+      
+      
+        
+      
+      
+                    
+
+      
+      
+      
+                    <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle ">
+                      <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          
+                        <img src="./img/doc01.svg"  width="32" height="32" class="rounded-circle mk-ico-02">
+                        Разделы
+                      </a>
+      
+                      
+                      <ul class="dropdown-menu gap-1 p-2  rounded-3 mx-0 dropdown-menu-end ">
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="og.html"><i class="bi bi-record-circle-fill pe-3 mk-ico-01"></i>Орбитальные группировки</a></li>
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="rockets.html"><i class="bi bi-rocket-fill pe-3 mk-ico-01"></i>Ракеты-носители</a></li>
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="iss.html"><i class="bi bi-x-diamond-fill pe-3 mk-ico-01"></i>МКС</a></li>
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="spaceports.html"><i class="bi bi-globe-europe-africa pe-3 mk-ico-01" ></i>Космодромы</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="news01.html"><i class="bi bi-globe2 pe-3 mk-ico-01"></i>Новости</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item rounded-2 mk-dropdown-item" href="analysis.html"><i class="bi bi-opencollective pe-3 mk-ico-01" ></i>Анализ данных. ИИ</a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle ">
+                      <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         
+                        <img src="./img/user01.svg"  width="32" height="32" class="rounded-circle mk-ico-02">
+                        Личный кабинет
+                      </a>
+      
+                      
+                      <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 dropdown-menu-end">
+                        <li><a class="dropdown-item  rounded-2" href="user.html">Профиль</a></li>
+                        <li><a class="dropdown-item rounded-2" href="user.html">Мои документы</a></li>
+                        <li><a class="dropdown-item rounded-2" href="user.html">Избранное</a></li>
+                        <hr class="dropdown-divider">
+                        <li><a class="dropdown-item rounded-2" href="user.html">Выйти</a></li>
+                      </ul>
+                    </li>
+      
+      
+      
+                  
+      
+        
+      
+                </ul>
+      
+      
+      
+                
+      
+      
+      
+                
+        
+                <div class="dropdown  bottom-0 end-0   bd-mode-toggle link-body-emphasis mt-1 z-2">
+                    <button class="btn btn-sm btn-outline-secondary py-2 dropdown-toggle d-flex align-items-center "
+                            id="bd-theme"
+                            type="button"
+                            aria-expanded="false"
+                            data-bs-toggle="dropdown"
+                            aria-label="Toggle theme (auto)">
+                      <svg class="bi  theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0" aria-labelledby="bd-theme-text">
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="light" aria-pressed="false">
+                          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                          Light
+                          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center rounded-2 my-1" data-bs-theme-value="dark" aria-pressed="false">
+                          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                          Dark
+                          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center active rounded-2 my-1" data-bs-theme-value="auto" aria-pressed="true">
+                          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                          Auto
+                          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                      </li>    
+                    </ul>   
+                </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- mk-верхний фиксированный блок с меню  1 -->
+      
+        
+      </header>
+      
+  
+
+
+  
+
+    <!-- mk-без полей demo 01-->
+
+
+
+
+     <!-- mk-без полей demo 01-->
+
+
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+    
+
+<!---------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+<!----- Контент 0 -->
+
+ <section>
+
+
+
+  <!-----0 Pfujkjdjr-->
+  <div class="album mt-3 bg-body-tertiary">
+    <div class="container">
+
+
+        <nav aria-label="breadcrumb d-flex justify-content-start">
+            <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
+              <li class="breadcrumb-item ">
+                <a class="link-body-emphasis" href="index.html">
+                  <i class="bi bi-house-door-fill"></i>
+                  <span class="visually-hidden ">Главная</span>
+                </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold " href="#">Разделы</a>
+              </li>
+              <li class="breadcrumb-item active text-truncate" aria-current="page">
+                Орбитальные группировки
+              </li>
+            </ol>
+          </nav>
+
+<!----- Заголовок страницы 0 -->
+
+<div class=" mb-3 mt-2">
+      
+    <div class=" d-flex align-items-start mb-3">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+         <i class="bi-record-circle-fill"></i>
+        </div>
+        <div>
+            <h1 class="mk-bold">Орбитальные группировки</h1>
+        </div>
+</div>
+
+
+
+
+
+
+  </div>
+<!----- Заголовок страницы 1 -->
+
+  </div>
+</div>
+
+
+
+
+<div class="container">
+
+      
+
+  <!-- mk-форма поиска 00-->
+
+
+
+
+
+
+<div class="mx-auto border mk-back4 mb-3">
+<div class="bd-example m-0 ">
+<div class="row  row-cols-1 row-cols-lg-3 row-cols-sm-1 g-3">
+        <div class="col">
+          
+
+            <div class="card p-3  rounded-3 h-100 shadow-sm btn-mk-1">
+
+              <div class="grid">
+                <figure class="effect-ruby rounded-3 mk-hover-02">
+                  <img class="img-fluid " src="./dist/img/bm-1.svg" alt="img13">
+                  <figcaption>
+
+                    <h2 class="mk-bold">ДЗЗ</h2>
+                    
+                    <p class="rounded-3  ">Дистанционное зондирование Земли. Наблюдение поверхности Земли наземными, авиационными и космическими средствами, 
+                      оснащёнными различными видами съёмочной аппаратуры.</p>
+                    
+
+                    
+                    <a href="rse.html">View more</a>
+                  </figcaption>			
+                </figure>
+
+              </div>
+              
+
+            </div>
+
+
+            
+         </div>
+         <div class="col">
+          
+
+          <div class="card p-3  rounded-3 h-100 shadow-sm btn-mk-1">
+
+            <div class="grid">
+              <figure class="effect-ruby rounded-3 mk-hover-02">
+                <img class="img-fluid " src="./dist/img/bm-2.svg" alt="img13">
+                <figcaption>
+
+                  <h2 class="mk-bold">Спутниковая связь
+                  </h2>
+                  
+                  <p class="rounded-3  ">Радиосвязь, основанная на использовании в качестве ретрансляторов искусственных спутников Земли. 
+                    Коммуникация с подвижным и стационарными и земными станциями.</p>
+                  
+
+                  
+                  <a href="rockets.html">View more</a>
+                </figcaption>			
+              </figure>
+
+            </div>
+            
+
+          </div>
+
+
+          
+       </div>
+       <div class="col">
+          
+
+        <div class="card p-3  rounded-3 h-100 shadow-sm btn-mk-1">
+
+          <div class="grid">
+            <figure class="effect-ruby rounded-3 mk-hover-02">
+              <img class="img-fluid " src="./dist/img/bm-3.svg" alt="img13">
+              <figcaption>
+
+                <h2 class="mk-bold">Навигация
+                </h2>
+                
+                <p class="rounded-3  ">Система наземного и космического оборудования, позволяющая определять местоположение объектов в пространстве через приём и передачу спутникового сигнала.</p>
+                
+
+                
+                <a href="rockets.html">View more</a>
+              </figcaption>			
+            </figure>
+
+          </div>
+          
+
+        </div>
+
+
+        
+     </div>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Услуги 0 -->
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Модальное окно 0 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl mk-modal modal-dialog-centered modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body ">
+
+        <div class="col-12 p-3 rounded mk-back">
+          <div class="container  py-3 mk-back2  rounded">
+              <div class="row align-items-center py-3">
+                <div class="text-center px-5 ">
+                  <h1 class="fw-bold mb-3 fs-2 text-white">Автоматизация сервисных процессов
+                  </h1>
+                  
+                  <p class="text-center fs-5 text-white">Комплекс программных и технических средств, автоматизирующих процессы планирования, разработки, представления, управления и совершенствования инфраструктуры
+                  </p>
+
+              </div>
+
+
+                <div class="mx-auto ">
+                  <div class="">
+                      <img src="./dist/img/zs2.png" class="d-block mx-auto mx-lg-auto rounded-3 img-fluid" alt="" loading="lazy">
+                </div>
+                </div>
+
+                <p class="text-center fs-5 text-white pt-2">2026 v.12.1
+
+              </div>
+        </div>
+
+
+        <div>
+
+
+        </div>
+  
+      </div>
+
+
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary"data-bs-dismiss="modal">Ознакомился</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Модальное окно 1 -->
+
+
+
+
+  
+
+
+
+
+ 
+
+
+<!-- 1-2 1-->
+
+<!-- функционал 0----------------------------------->
+<!-- Модальное окно 0 -->
+
+
+<!-- Модальное окно 1 -->
+<!-- функционал 1---------------------------------------------------->
+
+
+</section>
+<!-------- Контент 1-->
+
+<!-- footer блок 0-->
+
+<section>
+  <div class="album py-4 bg-body-tertiary">
+    <div class="container py-4 ">
+
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Главная</a></li>
+            <li class="nav-item"><a href="faq.html" class="nav-link px-2 text-body-secondary">Справка</a></li>
+            <li class="nav-item"><a href="user.html" class="nav-link px-2 text-body-secondary">Кабинет</a></li>
+        </ul>
+        <div class="py-2 text-center">
+          <a href="index.html"><img class="" src="./dist/img/logo.svg" ></a>
+        </div>
+
+        <p class="text-center text-body-secondary">2024-2026</p>
+      </footer>
+
+   </div>
+ </div>
+</div>
+</div>
+</section>
+
+
+<!-- Служебное меню 0-->
+<section class="border-top">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Twelfth navbar example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Demo 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Demo 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Demo 3</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- Служебное меню 1-->
+
+
+
+<section class="py-4 mk-back-demo-03 px-4 h-25">
+    <div class="col-12 mk-back-demo-023 ">
+
+    </div>
+</section>
+
+<!-- footer блок 1-->
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    </body>
+
+
+    <script src="./dist/js/fslightbox.js"></script>
+    <script src="./dist/js/lazysizes.min.js"></script>
+</html>
