@@ -1,72 +1,124 @@
+const API_BASE = '/satellites';
+const PAGE_SIZE = 6;
+const PARENT_ID = 148;
+const PLACEHOLDERS = [
+  './dist/img/mkimg-01.jpg',
+  './dist/img/mkimg-02.jpg',
+  './dist/img/mkimg-03.jpg',
+  './dist/img/mkimg-04.jpg',
+];
+
+function getPlaceholder(satelliteId) {
+  const ids = Object.keys(satellites);
+  const idx = ids.indexOf(String(satelliteId));
+  return PLACEHOLDERS[(idx < 0 ? 0 : idx) % PLACEHOLDERS.length];
+}
+
 const selectedParams = document.getElementById('selectedParams');
-const modeButtons = document.querySelectorAll('.mode-btn');
-const satButtons = document.querySelectorAll('.sat-btn');
 const exportButtons = document.querySelectorAll('.export-btn');
+const satList = document.getElementById('satList');
+const satPagination = document.getElementById('satPagination');
 const satTitle = document.getElementById('satTitle');
 const satMeta = document.getElementById('satMeta');
 const satImage = document.getElementById('satImage');
 const satTableBody = document.getElementById('satTableBody');
-const exportMessage = document.getElementById('exportMessage');
-const orbitSatellites = document.getElementById('orbitSatellites');
-const orbitCaption = document.getElementById('orbitCaption');
+const satCount = document.getElementById('satCount');
 
-const selectedFilters = [];
-let activeMode = 'Низкая орбита';
+let activeSatelliteId = null;
+let satellites = {};
+let currentPage = 1;
+let selectedFilters = [];
 
-const satellites = {
-  'sat-1': {
-    title: 'SAR Observer A1',
-    meta: 'США / Канада, крупногабаритные, диапазоны X/C/S/L',
-    image: './dist/img/mkimg-01.jpg',
-    orbit: { rx: 150, ry: 88, angle: -25, color: '#0d6efd' },
-    rows: [
-      ['Страна', 'США / Канада'],
-      ['Класс массы', 'Крупногабаритные свыше 1000 кг'],
-      ['Диапазоны', 'X, C, S, L'],
-      ['Орбита', activeMode],
-      ['Назначение', 'Радиолокационное наблюдение поверхности']
-    ]
-  },
-  'sat-2': {
-    title: 'Europe Radar Node',
-    meta: 'Европа, малые, диапазоны X/C/S',
-    image: './dist/img/mkimg-02.jpg',
-    orbit: { rx: 200, ry: 118, angle: 18, color: '#198754' },
-    rows: [
-      ['Страна', 'Европа'],
-      ['Класс массы', 'Малые до 2000 кг'],
-      ['Диапазоны', 'X, C, S'],
-      ['Орбита', activeMode],
-      ['Назначение', 'Мониторинг инфраструктуры и картография']
-    ]
-  },
-  'sat-3': {
-    title: 'Dragon SAR Cluster',
-    meta: 'Китай, крупногабаритные, диапазоны X/C/L',
-    image: './dist/img/mkimg-03.jpg',
-    orbit: { rx: 250, ry: 148, angle: -8, color: '#ffc107' },
-    rows: [
-      ['Страна', 'Китай'],
-      ['Класс массы', 'Крупногабаритные свыше 1000 кг'],
-      ['Диапазоны', 'X, C, L'],
-      ['Орбита', activeMode],
-      ['Назначение', 'Наблюдение поверхности и погодонезависимая съемка']
-    ]
-  },
-  'sat-4': {
-    title: 'Indo Scan Mini',
-    meta: 'Индия, мини, диапазоны X/S',
-    image: './dist/img/mkimg-04.jpg',
-    orbit: { rx: 200, ry: 118, angle: 140, color: '#dc3545' },
-    rows: [
-      ['Страна', 'Индия'],
-      ['Класс массы', 'Мини до 100 кг'],
-      ['Диапазоны', 'X, S'],
-      ['Орбита', activeMode],
-      ['Назначение', 'Оперативное наблюдение и тестовая группировка']
-    ]
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function truncateWords(str, maxWords) {
+  const words = String(str ?? '').trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return words.join(' ');
+  return words.slice(0, maxWords).join(' ') + '…';
+}
+
+async function fetchSatellites() {
+  try {
+    const response = await fetch(`${API_BASE}/groups?parent_id=${PARENT_ID}&limit=1000&offset=0`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+
+    satellites = Object.fromEntries(data.items.map((item) => [item.id_page, item]));
+    currentPage = 1;
+    activeSatelliteId = Object.keys(satellites)[0] ?? null;
+  } catch (err) {
+    console.error('[radar-groups] Ошибка загрузки:', err);
+    satList.innerHTML = `
+      <div class="col-12">
+        <div class="sat-item w-100 text-start">
+          <strong>Ошибка загрузки</strong>
+          <div class="small text-body-secondary mt-1">Не удалось получить данные с сервера.</div>
+        </div>
+      </div>
+    `;
+    if (satPagination) satPagination.innerHTML = '';
+    return;
   }
-};
+  renderTypeFilters();
+  renderCountryFilters();
+  updateView();
+}
+
+function renderPagination(totalFiltered) {
+  if (!satPagination) return;
+  const totalPages = Math.ceil(totalFiltered / PAGE_SIZE);
+  if (totalPages <= 1) {
+    satPagination.innerHTML = '';
+    return;
+  }
+
+  satPagination.innerHTML =
+    '<ul class="pagination align-items-center mb-0">' +
+      '<li class="page-item' + (currentPage === 1 ? ' disabled' : '') + '">' +
+        '<a class="page-link" href="#" data-page="' + (currentPage - 1) + '">&laquo;</a>' +
+      '</li>' +
+      '<li class="page-item disabled">' +
+        '<span class="page-link border-0 bg-transparent">' + currentPage + ' / ' + totalPages + '</span>' +
+      '</li>' +
+      '<li class="page-item' + (currentPage === totalPages ? ' disabled' : '') + '">' +
+        '<a class="page-link" href="#" data-page="' + (currentPage + 1) + '">&raquo;</a>' +
+      '</li>' +
+    '</ul>';
+
+  satPagination.querySelectorAll('[data-page]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const p = parseInt(el.getAttribute('data-page'));
+      if (p >= 1 && p <= totalPages) {
+        currentPage = p;
+        updateView();
+      }
+    });
+  });
+}
+
+function getSatelliteType(satellite) {
+  const types = [];
+  if (satellite.is_civ) types.push('Гражданский');
+  if (satellite.is_com) types.push('Коммерческий');
+  return types.join(', ') || '—';
+}
+
+function getSatelliteRows(satellite) {
+  return [
+    ['Тип', getSatelliteType(satellite)],
+    ['Страна', (satellite.country ?? []).join(', ') || '—'],
+    ['Описание', satellite.small_content ?? '—'],
+    ['Подробнее', satellite.big_content ?? '—'],
+    ['Источник', satellite.source ?? '—']
+  ];
+}
 
 function renderSelectedParams() {
   if (!selectedFilters.length) {
@@ -80,29 +132,218 @@ function renderSelectedParams() {
   }).join('');
 }
 
-function renderOrbit(activeSatelliteId) {
-  const activeButtons = [...document.querySelectorAll('.sat-btn.active')];
-  const ids = activeButtons.length ? activeButtons.map((button) => button.dataset.target) : [activeSatelliteId];
-  const uniqueIds = [...new Set(ids.filter(Boolean))];
+function getFilterGroups() {
+  const groups = {
+    country: { include: [], exclude: [] },
+    type: { include: [], exclude: [] }
+  };
 
-  orbitSatellites.innerHTML = uniqueIds.map((id) => {
-    const sat = satellites[id];
-    if (!sat) return '';
-    const rad = sat.orbit.angle * Math.PI / 180;
-    const cx = 230 + sat.orbit.rx * Math.cos(rad);
-    const cy = 210 + sat.orbit.ry * Math.sin(rad);
+  selectedFilters.forEach((item) => {
+    if (item.label.startsWith('Страна: ')) {
+      groups.country[item.state].push(item.label.replace('Страна: ', ''));
+    }
+    if (item.label.startsWith('Тип: ') && item.key) {
+      groups.type[item.state].push(item.key);
+    }
+  });
+
+  return groups;
+}
+
+function satelliteMatchesFilters(satellite, groups) {
+  const countries = satellite.country ?? [];
+
+  if (groups.country.include.length) {
+    if (!countries.some((c) => groups.country.include.includes(c))) return false;
+  }
+  if (groups.country.exclude.length) {
+    if (countries.some((c) => groups.country.exclude.includes(c))) return false;
+  }
+
+  if (groups.type.include.length) {
+    if (!groups.type.include.some((key) => satellite[key])) return false;
+  }
+  if (groups.type.exclude.length) {
+    if (groups.type.exclude.some((key) => satellite[key])) return false;
+  }
+
+  return true;
+}
+
+function getFilteredSatelliteIds() {
+  const groups = getFilterGroups();
+  return Object.keys(satellites).filter((id) => satelliteMatchesFilters(satellites[id], groups));
+}
+
+// ---------------------------------------------------------------------------
+// Рендер
+// ---------------------------------------------------------------------------
+
+
+function renderSatelliteDetails(satelliteId) {
+  const satellite = satellites[satelliteId];
+  if (!satellite) return;
+
+  activeSatelliteId = satelliteId;
+  satTitle.textContent = satellite.title_content;
+  satMeta.textContent = satellite.small_content ?? '';
+  satImage.src = getPlaceholder(satelliteId);
+  satTableBody.innerHTML = getSatelliteRows(satellite).map(([key, value]) => {
+    return `<tr><td>${key}</td><td>${value}</td></tr>`;
+  }).join('');
+}
+
+function renderSatelliteList() {
+  const filteredIds = getFilteredSatelliteIds();
+  const totalFiltered = filteredIds.length;
+  const totalAll = Object.keys(satellites).length;
+  const totalPages = Math.max(1, Math.ceil(totalFiltered / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  satCount.textContent = totalFiltered === totalAll
+    ? `${totalAll} спутников`
+    : `${totalFiltered} из ${totalAll}`;
+
+  if (!totalFiltered) {
+    satList.innerHTML = `
+      <div class="col-12">
+        <div class="sat-item w-100 text-start">
+          <strong>Совпадений не найдено</strong>
+          <div class="small text-body-secondary mt-1">Измени выбранные фильтры по стране, массе или диапазону, чтобы получить доступные спутники.</div>
+        </div>
+      </div>
+    `;
+    satTitle.textContent = 'Совпадений не найдено';
+    satMeta.textContent = 'Текущий набор фильтров не возвращает спутники.';
+    satImage.src = PLACEHOLDERS[0];
+    satTableBody.innerHTML = `
+      <tr><td>Статус</td><td>Нет подходящих спутников</td></tr>
+      <tr><td>Рекомендация</td><td>Сними часть ограничений или выбери другой диапазон</td></tr>
+    `;
+    renderPagination(0);
+    return;
+  }
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageIds = filteredIds.slice(start, start + PAGE_SIZE);
+
+  if (!pageIds.includes(activeSatelliteId)) {
+    activeSatelliteId = pageIds[0];
+  }
+
+  satList.innerHTML = pageIds.map((id) => {
+    const satellite = satellites[id];
+    const isActive = id === activeSatelliteId ? ' active' : '';
+
     return `
-      <g>
-        <circle cx="${cx}" cy="${cy}" r="9" fill="${sat.orbit.color}" stroke="white" stroke-width="2"/>
-        <text x="${cx + 14}" y="${cy + 4}" class="orbit-label">${sat.title}</text>
-      </g>
+      <div class="col-md-6 d-flex">
+        <button type="button" class="sat-item w-100 text-start sat-btn${isActive}" data-target="${escapeHtml(id)}">
+          <strong class="sat-item-title">${escapeHtml(truncateWords(satellite.title_content, 8))}</strong>
+          <div class="small text-body-secondary mt-1 sat-item-desc">${escapeHtml(truncateWords(satellite.small_content, 20))}</div>
+        </button>
+      </div>
     `;
   }).join('');
 
-  orbitCaption.textContent = uniqueIds.length > 1
-    ? `Схема орбит для выбранных спутников: ${uniqueIds.length}`
-    : `Схема полета: ${satellites[uniqueIds[0]]?.title || 'спутник не выбран'}`;
+  satList.querySelectorAll('.sat-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      satList.querySelectorAll('.sat-btn').forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      renderSatelliteDetails(button.dataset.target);
+    });
+  });
+
+  renderSatelliteDetails(activeSatelliteId);
+  renderPagination(totalFiltered);
 }
+
+function renderTypeFilters() {
+  const container = document.getElementById('typeFilters');
+  if (!container) return;
+
+  const types = [
+    { key: 'is_civ', label: 'Гражданский' },
+    { key: 'is_com', label: 'Коммерческий' }
+  ];
+
+  container.innerHTML = '';
+
+  types.forEach(({ key, label }) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sat-chip';
+    btn.dataset.state = 'neutral';
+    btn.innerHTML = `<span class="filter-marker"><i class="bi bi-dash-lg"></i></span><strong>${escapeHtml(label)}</strong>`;
+
+    btn.addEventListener('click', () => {
+      const nextState =
+        btn.dataset.state === 'neutral' ? 'include' :
+        btn.dataset.state === 'include' ? 'exclude' : 'neutral';
+
+      btn.dataset.state = nextState;
+      setControlState(btn.querySelector('.filter-marker'), nextState);
+
+      const filterLabel = `Тип: ${label}`;
+      const existing = selectedFilters.findIndex((item) => item.label === filterLabel);
+      if (existing >= 0) selectedFilters.splice(existing, 1);
+      if (nextState !== 'neutral') selectedFilters.push({ label: filterLabel, state: nextState, key });
+
+      currentPage = 1;
+      updateView();
+    });
+
+    container.appendChild(btn);
+  });
+}
+
+function renderCountryFilters() {
+  const container = document.getElementById('countryFilters');
+  if (!container) return;
+
+  const allCountries = new Set();
+  Object.values(satellites).forEach((sat) => {
+    (sat.country ?? []).forEach((c) => allCountries.add(c));
+  });
+
+  const sorted = [...allCountries].sort();
+  container.innerHTML = '';
+
+  sorted.forEach((country) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sat-chip';
+    btn.dataset.state = 'neutral';
+    btn.innerHTML = `<span class="filter-marker"><i class="bi bi-dash-lg"></i></span><strong>${escapeHtml(country)}</strong>`;
+
+    btn.addEventListener('click', () => {
+      const nextState =
+        btn.dataset.state === 'neutral' ? 'include' :
+        btn.dataset.state === 'include' ? 'exclude' : 'neutral';
+
+      btn.dataset.state = nextState;
+      setControlState(btn.querySelector('.filter-marker'), nextState);
+
+      const label = `Страна: ${country}`;
+      const existing = selectedFilters.findIndex((item) => item.label === label);
+      if (existing >= 0) selectedFilters.splice(existing, 1);
+      if (nextState !== 'neutral') selectedFilters.push({ label, state: nextState });
+
+      currentPage = 1;
+      updateView();
+    });
+
+    container.appendChild(btn);
+  });
+}
+
+function updateView() {
+  renderSelectedParams();
+  renderSatelliteList();
+}
+
+// ---------------------------------------------------------------------------
+// Управление фильтрами
+// ---------------------------------------------------------------------------
 
 function setControlState(button, state) {
   button.classList.remove('include', 'exclude');
@@ -118,123 +359,16 @@ function setControlState(button, state) {
   }
 }
 
-function bindFilterControl(control, label) {
-  control.dataset.state = 'neutral';
-  const wrapper = document.createElement('div');
-  wrapper.className = 'toggle-row';
-  control.parentNode.insertBefore(wrapper, control);
-  wrapper.appendChild(control);
 
-  const marker = document.createElement('span');
-  marker.className = 'filter-marker';
-  marker.innerHTML = '<i class="bi bi-dash-lg"></i>';
-  marker.setAttribute('role', 'button');
-  marker.setAttribute('tabindex', '0');
-  marker.setAttribute('aria-label', `Переключить фильтр ${label}`);
-  wrapper.insertBefore(marker, control);
-
-  const toggleFilterState = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    const nextState =
-      control.dataset.state === 'neutral' ? 'include' :
-      control.dataset.state === 'include' ? 'exclude' : 'neutral';
-
-    control.dataset.state = nextState;
-    setControlState(marker, nextState);
-
-    const existing = selectedFilters.findIndex((item) => item.label === label);
-    if (existing >= 0) selectedFilters.splice(existing, 1);
-    if (nextState !== 'neutral') selectedFilters.push({ label, state: nextState });
-
-    renderSelectedParams();
-  };
-
-  marker.addEventListener('click', toggleFilterState);
-  marker.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      toggleFilterState(event);
-    }
-  });
-}
-
-document.querySelectorAll('.group-toggle').forEach((control) => {
-  const label = control.querySelector('strong')?.textContent?.trim() || control.textContent.trim();
-  bindFilterControl(control, `Страна: ${label}`);
-});
-
-document.querySelectorAll('.mass-toggle').forEach((control) => {
-  const label = control.textContent.trim().replace(/\s+/g, ' ');
-  bindFilterControl(control, `Масса: ${label.replace(/^[^\\wА-Яа-я]*/, '')}`);
-});
-
-document.querySelectorAll('.range-toggle').forEach((button) => {
-  const text = button.textContent.replace('Диапазоны:', '').trim();
-  const ranges = text.split(',').map((item) => item.trim()).filter(Boolean);
-  const wrapper = document.createElement('div');
-  wrapper.className = 'range-list';
-
-  ranges.forEach((range) => {
-    const item = document.createElement('button');
-    item.type = 'button';
-    item.className = 'range-toggle range-item';
-    item.dataset.state = 'neutral';
-    item.innerHTML = `<span>${range}</span><span class="filter-marker"><i class="bi bi-dash-lg"></i></span>`;
-
-    item.addEventListener('click', () => {
-      const nextState =
-        item.dataset.state === 'neutral' ? 'include' :
-        item.dataset.state === 'include' ? 'exclude' : 'neutral';
-
-      item.dataset.state = nextState;
-      setControlState(item, nextState);
-      setControlState(item.querySelector('.filter-marker'), nextState);
-
-      const label = `Диапазон: ${range}`;
-      const existing = selectedFilters.findIndex((entry) => entry.label === label);
-      if (existing >= 0) selectedFilters.splice(existing, 1);
-      if (nextState !== 'neutral') selectedFilters.push({ label, state: nextState });
-
-      renderSelectedParams();
-    });
-
-    wrapper.appendChild(item);
-  });
-
-  button.replaceWith(wrapper);
-});
-
-modeButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    modeButtons.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    activeMode = button.dataset.mode;
-    const activeSat = document.querySelector('.sat-btn.active');
-    if (activeSat) activeSat.click();
-  });
-});
-
-satButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    satButtons.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    const data = satellites[button.dataset.target];
-    satTitle.textContent = data.title;
-    satMeta.textContent = `${data.meta}. Текущий режим: ${activeMode}.`;
-    satImage.src = data.image;
-    satTableBody.innerHTML = data.rows.map(([k, v]) => {
-      const value = k === 'Орбита' ? activeMode : v;
-      return `<tr><td>${k}</td><td>${value}</td></tr>`;
-    }).join('');
-    renderOrbit(button.dataset.target);
-  });
-});
+const FORMAT_MAP = { PDF: 'pdf', Excel: 'excel', DOC: 'doc', HTML: 'html' };
 
 exportButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    exportMessage.textContent = `Подготовлен интерфейс экспорта в формате ${button.dataset.format}. После подключения базы данных и файлов характеристик здесь будет формироваться реальный документ.`;
+    if (!activeSatelliteId) return;
+    const fmt = FORMAT_MAP[button.dataset.format];
+    if (fmt) window.location = `/satellites/${activeSatelliteId}/export?format=${fmt}`;
   });
 });
 
-renderSelectedParams();
-renderOrbit('sat-1');
+// Начальная загрузка
+fetchSatellites();

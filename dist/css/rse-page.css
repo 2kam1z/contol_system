@@ -22,3 +22,43 @@
   transform: translateX(-2px);
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
+
+.rse-method-card {
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.rse-method-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--bs-primary);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.rse-method-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 110, 253, 0.24);
+  box-shadow: 0 1.35rem 2.5rem rgba(15, 32, 58, 0.12);
+}
+
+.rse-method-card:hover::before {
+  opacity: 1;
+}
+
+.rse-method-card .icon-square {
+  border-radius: .9rem;
+  width: 3rem;
+  height: 3rem;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.rse-method-card:hover .icon-square {
+  background-color: var(--bs-primary-bg-subtle) !important;
+  color: var(--bs-primary) !important;
+}

@@ -8,9 +8,8 @@
     <meta name="description" content="Радиолокационное зондирование">
     <title>Система контроля процессов</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2.css?v=1" rel="stylesheet">
     <link href="./dist/css/style2-main-3.css" rel="stylesheet">
     <link href="./dist/css/headers.css" rel="stylesheet">
     <link href="./dist/css/sign-in.css" rel="stylesheet">
@@ -20,9 +19,10 @@
     <link href="./dist/css/bootstrap-icons.css" rel="stylesheet">
     <link href="./dist/css/features.css" rel="stylesheet">
     <link href="./dist/css/sidebars.css" rel="stylesheet">
-    <link href="./dist/css/radar-rse.css" rel="stylesheet">
+    <link href="./dist/css/radar-rse.css?v=4" rel="stylesheet">
+    <link href="./dist/css/og-inspired-sections.css" rel="stylesheet">
   </head>
-  <body class="bg-body-tertiary">
+  <body class="bg-body-tertiary og-inspired-page">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -57,7 +57,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1">
                 <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
-                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle ms-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./img/doc01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
                     Разделы
                   </a>
@@ -73,7 +73,7 @@
                   </ul>
                 </li>
                 <li class="nav-item dropdown bottom-0 end-0 bd-mode-toggle">
-                  <a class="nav-link dropdown-toggle ms-1" href="user.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle ms-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./img/user01.svg" width="32" height="32" class="rounded-circle mk-ico-02" alt="">
                     Личный кабинет
                   </a>
@@ -106,7 +106,7 @@
     <section>
       <div class="album mt-3 bg-body-tertiary">
         <div class="container">
-          <nav aria-label="breadcrumb d-flex justify-content-start">
+          <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
               <li class="breadcrumb-item">
                 <a class="link-body-emphasis" href="index.html"><i class="bi bi-house-door-fill"></i></a>
@@ -118,165 +118,125 @@
             </ol>
           </nav>
 
-          <div class="mb-3 mt-2">
-            <div class="d-flex align-items-start mb-3">
-              <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <i class="bi bi-broadcast-pin"></i>
+          <div class="og-hero-panel">
+            <div class="row g-4 align-items-end">
+              <div class="col-12">
+                <div class="og-hero-copy d-grid gap-3">
+                  <div class="d-flex align-items-start">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                      <i class="bi bi-broadcast-pin"></i>
+                    </div>
+                    <div class="d-grid gap-2">
+                      <h1 class="mk-bold og-hero-title">Радиолокационное зондирование</h1>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="rse.html" class="btn btn-outline-secondary rounded-pill px-3 radar-back">
+                      <i class="bi bi-arrow-left me-2"></i>Назад
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h1 class="mk-bold">Радиолокационное зондирование</h1>
-                <p class="text-body-secondary mb-0">Быстрый доступ к статистике, группировкам и будущему поиску по данным.</p>
-              </div>
-            </div>
-            <div class="mb-3">
-              <a href="rse.html" class="btn btn-outline-secondary rounded-pill px-3 radar-back">
-                <i class="bi bi-arrow-left me-2"></i>Назад
-              </a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="container">
-        <div class="row row-cols-1 row-cols-lg-3 g-3 mb-4">
-          <div class="col">
-            <button type="button" class="radar-select filter-btn" data-group="Раздел" data-value="Статистические данные">
-              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
-                <div class="card-body p-4">
-                  <div class="d-flex align-items-start mb-3">
-                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <i class="bi bi-graph-up-arrow"></i>
-                    </div>
-                    <h3 class="mk-bold fs-4 mb-0">Статистические данные<br><span class="text-body-secondary fs-6">(графики запусков, численности)</span></h3>
-                  </div>
-                  <div class="card-hint mb-0">
-                    В разделе находятся сводные показатели по запускам, динамике числа аппаратов и общим количественным характеристикам.
-                  </div>
-                </div>
-              </div>
-            </button>
-          </div>
+        <div class="og-panel">
+          <div class="og-section-head">
+            <h2 class="mk-bold fs-4">Маршруты внутри раздела</h2>
+            </div>
 
-          <div class="col">
-            <a href="radar-groups.html" class="radar-select">
-              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
-                <div class="card-body p-4">
-                  <div class="d-flex align-items-start mb-3">
-                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <i class="bi bi-diagram-3"></i>
-                    </div>
-                    <h3 class="mk-bold fs-4 mb-0">Группировки<br><span class="text-body-secondary fs-6">(по странам, по массе)</span></h3>
-                  </div>
-                  <div class="card-hint mb-0">
-                    В этом разделе можно будет быстро переходить к сравнению радиолокационных группировок по странам, классам и весовым категориям аппаратов.
-                  </div>
+          <div class="row row-cols-1 row-cols-lg-2 row-cols-sm-1 g-3">
+            <div class="col">
+              <div class="card p-3 rounded-3 h-100 shadow-sm btn-mk-1">
+                <div class="grid">
+                  <figure class="effect-ruby rounded-3 mk-hover-02">
+                    <img class="img-fluid" src="./dist/img/mkimg-01.jpg" alt="">
+                    <figcaption>
+                      <h2 class="mk-bold">Статистические данные</h2>
+                      <p class="rounded-3">Графики запусков, динамика численности и количественные срезы радиолокационных аппаратов.</p>
+                      <a href="#">Подробнее</a>
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
 
-          <div class="col">
-            <a href="radar-search.html" class="radar-select">
-              <div class="card rounded-3 border h-100 shadow-sm radar-card hint-wrap">
-                <div class="card-body p-4">
-                  <div class="d-flex align-items-start mb-3">
-                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <i class="bi bi-search"></i>
-                    </div>
-                    <h3 class="mk-bold fs-4 mb-0">Поиск информации</h3>
-                  </div>
-                  <div class="card-hint mb-0">
-                    Переход на отдельную страницу поиска по стране, названию группировки и связанным характеристикам спутников.
-                  </div>
+            <div class="col">
+              <div class="card p-3 rounded-3 h-100 shadow-sm btn-mk-1">
+                <div class="grid">
+                  <figure class="effect-ruby rounded-3 mk-hover-02">
+                    <img class="img-fluid" src="./dist/img/mkimg-02.jpg" alt="">
+                    <figcaption>
+                      <h2 class="mk-bold">Группировки</h2>
+                      <p class="rounded-3">Страны, классы массы, диапазоны и выборки для сравнения орбитальных систем.</p>
+                      <a href="radar-groups.html">Подробнее</a>
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
 
-        <div class="border rounded-3 p-4 mb-4 bg-body-tertiary">
-          <div class="d-flex align-items-center justify-content-between mb-3">
+        <div class="og-panel">
+          <div class="og-section-head d-flex align-items-center justify-content-between">
+            <h2 class="mk-bold fs-4 mb-0">Спутники ДЗЗ</h2>
+            <span id="rseCount" class="small text-body-secondary"></span>
+          </div>
+          <div class="mb-3">
+            <input id="rseSearch" type="search" class="form-control" placeholder="Поиск по названию, стране…">
+          </div>
+          <div id="rseResults" class="row g-3">
+            <div class="col-12 text-body-secondary small">Загрузка…</div>
+          </div>
+          <nav id="rseSearchPagination" class="d-flex justify-content-center mt-3"></nav>
+
+          <div class="og-soft-card p-4 mt-4 mb-0">
+            <div class="og-section-head mb-3">
+              <h3 class="mk-bold fs-5 mb-0">Карточка объекта</h3>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="PDF">PDF</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="Excel">Excel</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="DOC">DOC</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="HTML">HTML</button>
+              </div>
+            </div>
+            <div class="row g-4 align-items-start">
+              <div class="col-lg-4">
+                <div class="p-2 rounded-3 border card">
+                  <img id="satImage" class="img-fluid rounded" src="" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <h4 id="satTitle" class="mk-bold"></h4>
+                <p id="satMeta" class="text-body-secondary"></p>
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                      </tr>
+                    </thead>
+                    <tbody id="satTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="og-panel">
+          <div class="og-section-head">
             <h2 class="mk-bold fs-4 mb-0">Лента новостей</h2>
-            <span class="small text-body-secondary">Материалы как на главной странице</span>
+            <span id="newsCount" class="small text-body-secondary"></span>
           </div>
-
-          <div class="border mk-back4 mb-2">
-            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
-              <div class="row">
-                <div class="col-lg-3 col-md-5">
-                  <div class="row">
-                    <div class="col-xl-12 p-3">
-                      <div class="p-2 rounded-3 border card">
-                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-01.jpg" alt="" style="min-width:100%"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-9 col-md-7 p-3">
-                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">NASA изменило правила для создания коммерческих орбитальных станций, фактически выбрав преемника МКС</a></h2>
-                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="border mk-back4 mb-2">
-            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
-              <div class="row">
-                <div class="col-lg-3 col-md-5">
-                  <div class="row">
-                    <div class="col-xl-12 p-3">
-                      <div class="p-2 rounded-3 border card">
-                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-02.jpg" alt="" style="min-width:100%"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-9 col-md-7 p-3">
-                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">Доработка платформы, разработка новых модулей, внедрение на предприятиях отрасли</a></h2>
-                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="border mk-back4 mb-2">
-            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
-              <div class="row">
-                <div class="col-lg-3 col-md-5">
-                  <div class="row">
-                    <div class="col-xl-12 p-3">
-                      <div class="p-2 rounded-3 border card">
-                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-03.jpg" alt="" style="min-width:100%"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-9 col-md-7 p-3">
-                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">Космонавты проводят техническое обслуживание систем обеспечения жизнедеятельности МКС</a></h2>
-                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="border mk-back4 mb-2">
-            <div class="card border rounded-3 h-100 px-3 py-1 bg-body-tertiary">
-              <div class="row">
-                <div class="col-lg-3 col-md-5">
-                  <div class="row">
-                    <div class="col-xl-12 p-3">
-                      <div class="p-2 rounded-3 border card">
-                        <a href="01.html"><img class="img-fluid rounded" src="./dist/img/mkimg-04.jpg" alt="" style="min-width:100%"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-9 col-md-7 p-3">
-                  <h2 class="mk-bold fs-3"><a href="01.html" class="link-body-emphasis link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover">На МКС исследуют плазменно-пылевые кристаллы и жидкости</a></h2>
-                  <p class="mb-1">Материал из новостного блока главной страницы.</p>
-                </div>
-              </div>
+          <div id="newsResults">
+            <div class="col-12 text-body-secondary small">
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>Загрузка…
             </div>
           </div>
         </div>
@@ -303,6 +263,6 @@
 
     <script src="./dist/js/fslightbox.js"></script>
     <script src="./dist/js/lazysizes.min.js"></script>
-    <script src="./dist/js/radar-rse.js"></script>
+    <script src="./dist/js/radar-rse.js?v=9"></script>
   </body>
 </html>

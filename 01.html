@@ -30,10 +30,8 @@
 
     
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2.css?v=1" rel="stylesheet">
     <link href="./dist/css/headers.css" rel="stylesheet">
     <link href="./dist/css/sign-in.css" rel="stylesheet">
     <link href="./dist/css/navbar-fixed.css" rel="stylesheet">
@@ -49,9 +47,6 @@
 
 
 
-<style>
-
-    </style>
 
 
 
@@ -315,8 +310,8 @@
               <li class="breadcrumb-item">
                 <a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="#">Новости</a>
               </li>
-              <li class="breadcrumb-item active text-truncate" aria-current="page">
-                На МКС исследуют плазменно-пылевые кристаллы и жидкости
+              <li class="breadcrumb-item active text-truncate" aria-current="page" id="newsBreadcrumb">
+
               </li>
             </ol>
           </nav>
@@ -330,7 +325,7 @@
          <i class="bi bi-globe2 "></i>
         </div>
         <div>
-            <h1 class="mk-bold">На МКС исследуют плазменно-пылевые кристаллы и жидкости</h1>
+            <h1 class="mk-bold" id="newsTitle"></h1>
         </div>
 </div>
 
@@ -359,9 +354,7 @@
 
             <div class="col-xl-12 p-3 ">
               <div class="p-2 rounded-3 border card">
-                <a href="01.html" >
-                    <img class="img-fluid rounded" src="./dist/img/mkimg-01.jpg" alt="***" title="***" style="min-width:100%">
-                </a>
+                <img id="newsImg" class="img-fluid rounded" src="./dist/img/mkimg-01.jpg" alt="" style="min-width:100%">
               </div>
             </div>
           </div>
@@ -369,19 +362,7 @@
     <div class="col-lg-9 col-md-7 p-3 ">
 
       
-      <p class="">На Международной космической станции продолжается полёт российских участников 73-й длительной экспедиции — космонавтов Роскосмоса Сергея Рыжикова, Алексея Зубрицкого и Олега Платонова. 
-        17 сентября по программе полёта российского сегмента станции выполнен эксперимент «Плазменный кристалл-4». 
-        Его цель — исследование плазменно-пылевых кристаллов и жидкостей в условиях микрогравитации на Международной космической станции.</p>
-        <p class="">На борту МКС российские космонавты успешно провели эксперимент из серии исследований плазменно-пылевых кристаллов и жидкостей. 
-          В ходе эксперимента исследуются процессы формирования упорядоченных структур заряженных твёрдых частиц в условиях микрогравитации. 
-          Основная цель — понять, как микрочастицы взаимодействуют с потоком ионов в плазме.</p>
-          <p class="">Космонавты на Международной космической станции продолжают эксперимент «Плазменный кристалл», изучая плазменно-пылевые кристаллы и жидкости. 
-            Командир отряда Роскосмоса Олег Кононенко сообщил, что в ходе эксперимента исследуются процессы формирования упорядоченных структур заряженных твёрдых частиц в условиях микрогравитации. 
-            Основная цель — понять, как микрочастицы взаимодействуют с потоком ионов в плазме.</p>
-            <p class="">Эксперимент также включает изучение бинарных смесей в разряде постоянного тока, находящихся в тепловой ловушке. Кроме того, исследуются процессы релаксации комплексной плазмы в различных режимах. 
-              Особое внимание уделяется воздействию электрического поля на плазму и остаточный заряд микрочастиц после релаксации.
-
-              Во время 71-й экспедиции на МКС планируется провести четыре сеанса эксперимента. Эти исследования помогут лучше понять поведение плазмы в космосе и могут иметь важные практические приложения.</p>
+      <div id="newsBody"></div>
   
       <!-- Ограничиваям вывод текста .text-truncate. показываем на полной странице странице новостей по ссылке "Подробнее" -->
       <div class="text-body-tertiary small text-truncate"></div>
@@ -391,15 +372,9 @@
   
       <div class="">
   
-        <div class="mk-data-2 text-body-tertiary pe-2"><span class="me-2"><i class="bi-clock-fill pe-2"></i>09:08</span><span class="me-2"><i class="bi-calendar2-event-fill pe-2"></i>16.03.2025</span></span><span class="me-4"><i class="bi-globe2 pe-2"></i>roscosmos.ru</span></div>
+        <div class="mk-data-2 text-body-tertiary pe-2" id="newsMeta"></div>
 
-        <div class="mk-data-3 text-truncate">
-          <a class="flex-fill link-info text-truncate   link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover me-1" href="news01.html">ДЗЗ</a>
-           <a class="flex-fill link-info text-truncate   link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover me-1" href="news01.html">Орбитальные группировки</a>
-           <a class="flex-fill link-info text-truncate   link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover me-1" href="news01.html">Москва</a>
-           <a class="flex-fill link-info text-truncate   link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover me-1" href="news01.html">Рессурс-П</a>
-           <a class="flex-fill link-info text-truncate   link-offset-2 link-underline-opacity-10 link-underline-opacity-75-hover me-1" href="news01.html">Космодромы</a>
-         </div>
+
   
       </div>
   
@@ -590,4 +565,5 @@
 
     <script src="./dist/js/fslightbox.js"></script>
     <script src="./dist/js/lazysizes.min.js"></script>
+    <script src="./dist/js/01.js"></script>
 </html>

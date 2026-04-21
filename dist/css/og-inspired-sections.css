@@ -1,0 +1,290 @@
+.og-inspired-page {
+  background:
+    radial-gradient(circle at top right, rgba(13, 110, 253, 0.08), transparent 26%),
+    radial-gradient(circle at top left, rgba(23, 129, 156, 0.08), transparent 24%),
+    var(--bs-tertiary-bg);
+}
+
+.og-hero-panel,
+.og-panel {
+  border: 1px solid rgba(13, 31, 55, 0.08);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 253, 0.98)),
+    var(--bs-body-bg);
+  box-shadow: 0 1.25rem 2.5rem rgba(15, 32, 58, 0.06);
+}
+
+[data-bs-theme="dark"] .og-hero-panel,
+[data-bs-theme="dark"] .og-panel {
+  background:
+    linear-gradient(135deg, rgba(22, 28, 36, 0.96), rgba(14, 19, 27, 0.98)),
+    var(--bs-body-bg);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.22);
+}
+
+.og-hero-panel {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.og-panel {
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.og-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 110, 253, 0.18);
+  background: rgba(13, 110, 253, 0.08);
+  color: var(--bs-emphasis-color);
+  font-size: 0.88rem;
+}
+
+.og-hero-copy {
+  max-width: 780px;
+}
+
+.og-hero-title {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.og-hero-lead {
+  margin: 0;
+  max-width: 62rem;
+  color: var(--bs-secondary-color);
+  font-size: 1rem;
+}
+
+.og-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.og-stat-card {
+  border: 1px solid rgba(13, 31, 55, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 1rem 1.1rem;
+}
+
+[data-bs-theme="dark"] .og-stat-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.og-stat-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--bs-secondary-color);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.og-stat-value {
+  display: block;
+  font-family: 'GolosTextWebBold', sans-serif;
+  font-size: 1.2rem;
+}
+
+.og-card-shell {
+  border: 1px solid rgba(13, 31, 55, 0.08);
+  border-radius: 1.15rem;
+  overflow: hidden;
+  background: var(--bs-body-bg);
+  box-shadow: 0 1rem 2rem rgba(15, 32, 58, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.og-card-shell:hover {
+  transform: translateY(-5px);
+  border-color: rgba(13, 110, 253, 0.24);
+  box-shadow: 0 1.35rem 2.5rem rgba(15, 32, 58, 0.12);
+}
+
+.og-card-shell .grid {
+  width: 100%;
+  display: flow-root;
+}
+
+.og-card-shell > figure.effect-ruby {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  float: none;
+  margin: 0;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.og-card-shell > figure.effect-ruby img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.og-card-shell > figure.effect-ruby figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(3, 16, 59, 0.55) 0%, rgba(3, 16, 59, 0.0) 60%);
+}
+
+.og-card-shell > figure.effect-ruby h2 {
+  text-transform: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.og-card-shell > figure.effect-ruby p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.88);
+}
+
+.og-card-caption {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 1rem 1.1rem 1.1rem;
+  background: linear-gradient(0deg, rgba(3, 10, 35, 0.82) 60%, transparent);
+}
+
+.og-card-caption p {
+  margin-bottom: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.og-action-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.og-action-list .btn {
+  justify-content: flex-start;
+  text-align: left;
+  border-radius: 0.85rem;
+}
+
+.og-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.og-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(13, 31, 55, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.92rem;
+  color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] .og-chip {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.og-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.og-section-head h2,
+.og-section-head h3 {
+  margin: 0;
+}
+
+.og-soft-card {
+  border: 1px solid rgba(13, 31, 55, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+[data-bs-theme="dark"] .og-soft-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.search-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: var(--bs-body-bg);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.search-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--bs-primary);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .08);
+}
+
+.search-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  font-size: .9rem;
+  background: var(--bs-body-bg);
+}
+
+.search-form-panel .form-control,
+.search-form-panel .form-select {
+  border-radius: .9rem;
+  min-height: 48px;
+}
+
+.search-card,
+.group-block,
+.mode-card,
+.sat-card,
+.sat-item {
+  box-shadow: 0 1rem 2rem rgba(15, 32, 58, 0.06);
+}
+
+.search-card img {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.table thead th {
+  background: rgba(13, 110, 253, 0.06);
+}
+
+@media (max-width: 991.98px) {
+  .og-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .og-card-shell figure,
+  .og-card-shell figure img {
+    height: 240px;
+    min-height: 240px;
+  }
+}

@@ -926,3 +926,7 @@ line-height: 1.5em;
   .bd-mode-toggle {
     /*z-index: 1500;*/
   }
+
+[data-bs-theme="light"] footer img[src$="logo.svg"] {
+  content: url("../img/logo-light.svg");
+}

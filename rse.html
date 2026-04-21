@@ -13,10 +13,8 @@
     <title>Система контроля процессов</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./dist/css/style2.css" rel="stylesheet">
+    <link href="./dist/css/style2.css?v=1" rel="stylesheet">
     <link href="./dist/css/style2-main-3.css" rel="stylesheet">
     <link href="./dist/css/headers.css" rel="stylesheet">
     <link href="./dist/css/sign-in.css" rel="stylesheet">
@@ -27,9 +25,10 @@
     <link href="./dist/css/features.css" rel="stylesheet">
     <link href="./dist/css/sidebars.css" rel="stylesheet">
     <link href="./dist/css/c3.css" rel="stylesheet">
-    <link href="./dist/css/rse-page.css" rel="stylesheet">
+    <link href="./dist/css/rse-page.css?v=2" rel="stylesheet">
+    <link href="./dist/css/og-inspired-sections.css" rel="stylesheet">
   </head>
-  <body class="bg-body-tertiary">
+  <body class="bg-body-tertiary og-inspired-page">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -156,78 +155,82 @@
             </ol>
           </nav>
 
-          <div class="mb-3 mt-2">
-            <div class="d-flex align-items-start mb-3">
-              <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <i class="bi bi-globe2"></i>
+          <div class="og-hero-panel">
+            <div class="row g-4 align-items-end">
+              <div class="col-12">
+                <div class="og-hero-copy d-grid gap-3">
+                  <div class="d-flex align-items-start">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                      <i class="bi bi-globe2"></i>
+                    </div>
+                    <div class="d-grid gap-2">
+                      <h1 class="mk-bold og-hero-title">Дистанционное зондирование Земли</h1>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="og.html" class="btn btn-outline-secondary rounded-pill px-3 rse-back">
+                      <i class="bi bi-arrow-left me-2"></i>Назад
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h1 class="mk-bold">Дистанционное зондирование Земли</h1>
-                <p class="text-body-secondary mb-0">Раздел посвящен способам наблюдения поверхности, используемой аппаратуре и ключевым практическим задачам.</p>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <a href="og.html" class="btn btn-outline-secondary rounded-pill px-3 rse-back">
-                <i class="bi bi-arrow-left me-2"></i>Назад
-              </a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="container">
-        <div class="row row-cols-1 row-cols-lg-3 g-3 mb-4">
-          <div class="col">
-            <div class="card rounded-3 border h-100 shadow-sm">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start mb-3">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    <i class="bi bi-broadcast"></i>
+        <div class="og-panel">
+          <div class="og-section-head">
+            <h2 class="mk-bold fs-4">Ключевые направления</h2>
+          </div>
+
+          <div class="row row-cols-1 row-cols-lg-3 g-3">
+            <div class="col">
+              <div class="og-card-shell rse-method-card h-100 p-4 d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0">
+                    <i class="bi bi-broadcast-pin"></i>
                   </div>
-                  <h3 class="mk-bold fs-4 mb-0">Методы зондирования</h3>
+                  <h3 class="mk-bold fs-5 mb-0">Методы зондирования</h3>
                 </div>
                 <div class="d-grid gap-2">
                   <a href="radar-rse.html" class="btn btn-outline-secondary text-start rse-action">Радиолокационное зондирование</a>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Оптическое зондирование</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Термальное зондирование</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Гиперспектральное зондирование</button>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Оптическое зондирование</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Термальное зондирование</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Гиперспектральное зондирование</a>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col">
-            <div class="card rounded-3 border h-100 shadow-sm">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start mb-3">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    <i class="bi bi-cpu"></i>
+            <div class="col">
+              <div class="og-card-shell rse-method-card h-100 p-4 d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0">
+                    <i class="bi bi-cpu-fill"></i>
                   </div>
-                  <h3 class="mk-bold fs-4 mb-0">Аппаратура</h3>
+                  <h3 class="mk-bold fs-5 mb-0">Аппаратура</h3>
                 </div>
                 <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Спутники</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Наземные станции приема и обработки</button>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Спутники</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Наземные станции приема и обработки</a>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col">
-            <div class="card rounded-3 border h-100 shadow-sm">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start mb-3">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    <i class="bi bi-diagram-3"></i>
+            <div class="col">
+              <div class="og-card-shell rse-method-card h-100 p-4 d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0">
+                    <i class="bi bi-geo-alt-fill"></i>
                   </div>
-                  <h3 class="mk-bold fs-4 mb-0">Применение</h3>
+                  <h3 class="mk-bold fs-5 mb-0">Применение</h3>
                 </div>
                 <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Сельское хозяйство</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">ЧС и экология</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Картография</button>
-                  <button type="button" class="btn btn-outline-secondary text-start rse-action">Инфраструктура</button>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Сельское хозяйство</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">ЧС и экология</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Картография</a>
+                  <a href="rockets.html" class="btn btn-outline-secondary text-start rse-action">Инфраструктура</a>
                 </div>
               </div>
             </div>
