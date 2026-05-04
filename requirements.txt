@@ -1,0 +1,12 @@
+aiohttp
+aiomysql
+fastapi
+openpyxl
+python-docx
+python-dotenv
+python-jose[cryptography]
+pydantic-settings
+pwdlib
+reportlab
+sqlalchemy
+uvicorn[standard]

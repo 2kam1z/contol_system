@@ -12,7 +12,6 @@ const rseResults = document.getElementById('rseResults');
 const rseCount = document.getElementById('rseCount');
 const rsePagination = document.getElementById('rseSearchPagination');
 const newsResults = document.getElementById('newsResults');
-const newsCount = document.getElementById('newsCount');
 const satTitle = document.getElementById('satTitle');
 const satMeta = document.getElementById('satMeta');
 const satImage = document.getElementById('satImage');
@@ -22,6 +21,12 @@ const exportButtons = document.querySelectorAll('.export-btn');
 let currentPage = 1;
 let itemsById = {};
 let activeSatelliteId = null;
+
+// Зафиксировать высоту блоков, чтобы layout не плясал во время загрузки и при смене активного спутника.
+// 2 ряда по 84px + gap (g-3 ≈ 16px) = 184px.
+if (rseResults) rseResults.style.minHeight = '184px';
+const satCard = document.querySelector('.og-soft-card');
+if (satCard) satCard.style.minHeight = '380px';
 
 function escapeHtml(str) {
   return String(str)
@@ -65,20 +70,15 @@ async function fetchAndRender() {
   }
 }
 
-function getSatelliteType(satellite) {
-  const types = [];
-  if (satellite.is_civ) types.push('Гражданский');
-  if (satellite.is_com) types.push('Коммерческий');
-  return types.join(', ') || '—';
-}
-
 function getSatelliteRows(satellite) {
   return [
-    ['Тип', getSatelliteType(satellite)],
     ['Страна', (satellite.country ?? []).join(', ') || '—'],
+    ['Масса', satellite.mass ? `${satellite.mass} кг` : '—'],
+    ['Диапазон', satellite.frequency_range ?? '—'],
+    ['Разрешение', satellite.resolution ?? '—'],
+    ['Радиометрическая чувствительность', satellite.radiometric_sensitivity ?? '—'],
     ['Описание', satellite.small_content ?? '—'],
-    ['Подробнее', satellite.big_content ?? '—'],
-    ['Источник', satellite.source ?? '—']
+    ['Подробнее', satellite.big_content ?? '—']
   ];
 }
 
@@ -138,13 +138,13 @@ function renderResults(items, total) {
     const isActive = id === activeSatelliteId ? ' active' : '';
     return `
     <div class="col-lg-4 col-md-6">
-      <button type="button" class="og-card-shell h-100 p-3 w-100 text-start border-0 rse-result-btn${isActive}" data-target="${escapeHtml(id)}">
-        <div class="d-flex align-items-start gap-3">
-          <img src="${escapeHtml(img)}" class="rounded" style="width:64px;height:64px;object-fit:cover" alt="">
-          <div>
-            <h3 class="mk-bold fs-6 mb-1">${escapeHtml(item.title_content ?? '')}</h3>
-            ${subtitle ? `<p class="small text-body-secondary mb-1">${escapeHtml(subtitle)}</p>` : ''}
-            <p class="small mb-0">${escapeHtml(item.small_content ?? '')}</p>
+      <button type="button" class="p-2 w-100 text-start rse-result-btn${isActive}" data-target="${escapeHtml(id)}" style="min-height:0;height:84px;border:1px solid var(--bs-border-color);border-radius:.5rem;overflow:hidden;">
+        <div class="d-flex align-items-start gap-2" style="height:100%;">
+          <img src="${escapeHtml(img)}" class="rounded flex-shrink-0" style="width:48px;height:48px;object-fit:cover" alt="">
+          <div class="flex-grow-1" style="min-width:0;overflow:hidden;line-height:1.25;">
+            <div class="mk-bold text-truncate" style="font-size:.875rem;">${escapeHtml(item.title_content ?? '')}</div>
+            <div class="text-body-secondary text-truncate" style="font-size:.75rem;">${escapeHtml(subtitle) || '&nbsp;'}</div>
+            <div class="text-truncate" style="font-size:.75rem;">${escapeHtml(item.small_content ?? '')}</div>
           </div>
         </div>
       </button>
@@ -174,19 +174,18 @@ function renderPagination(total) {
   rsePagination.innerHTML =
     '<ul class="pagination align-items-center mb-0">' +
       '<li class="page-item' + (currentPage === 1 ? ' disabled' : '') + '">' +
-        '<a class="page-link" href="#" data-page="' + (currentPage - 1) + '">&laquo;</a>' +
+        '<button type="button" class="page-link" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + '>&laquo;</button>' +
       '</li>' +
       '<li class="page-item disabled">' +
         '<span class="page-link border-0 bg-transparent">' + currentPage + ' / ' + totalPages + '</span>' +
       '</li>' +
       '<li class="page-item' + (currentPage === totalPages ? ' disabled' : '') + '">' +
-        '<a class="page-link" href="#" data-page="' + (currentPage + 1) + '">&raquo;</a>' +
+        '<button type="button" class="page-link" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + '>&raquo;</button>' +
       '</li>' +
     '</ul>';
 
-  rsePagination.querySelectorAll('[data-page]').forEach((el) => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
+  rsePagination.querySelectorAll('[data-page]:not([disabled])').forEach((el) => {
+    el.addEventListener('click', () => {
       const p = parseInt(el.getAttribute('data-page'));
       if (p >= 1 && p <= totalPages) {
         currentPage = p;
@@ -230,9 +229,6 @@ function formatNewsDate(dtStr) {
 }
 
 function renderNews(items) {
-  if (newsCount) {
-    newsCount.textContent = `${items.length} материалов`;
-  }
   if (!newsResults) return;
 
   if (!items.length) {

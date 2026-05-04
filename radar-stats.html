@@ -5,8 +5,8 @@
     <script src="./dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Радиолокационные группировки">
-    <title>Система контроля процессов</title>
+    <meta name="description" content="Статистические данные радиолокационного зондирования">
+    <title>Статистические данные РЛС</title>
 
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./dist/css/style2.css?v=1" rel="stylesheet">
@@ -19,8 +19,8 @@
     <link href="./dist/css/bootstrap-icons.css" rel="stylesheet">
     <link href="./dist/css/features.css" rel="stylesheet">
     <link href="./dist/css/sidebars.css" rel="stylesheet">
-    <link href="./dist/css/radar-groups.css?v=9" rel="stylesheet">
     <link href="./dist/css/og-inspired-sections.css" rel="stylesheet">
+    <link href="./dist/css/radar-stats.css?v=8" rel="stylesheet">
   </head>
   <body class="bg-body-tertiary og-inspired-page">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -103,35 +103,33 @@
       </nav>
     </header>
 
-    <section>
-      <div class="album mt-3 bg-body-tertiary">
-        <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
-              <li class="breadcrumb-item"><a class="link-body-emphasis" href="index.html"><i class="bi bi-house-door-fill"></i></a></li>
-              <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="rse.html">ДЗЗ</a></li>
-              <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="radar-rse.html">Радиолокационное зондирование</a></li>
-              <li class="breadcrumb-item active text-truncate" aria-current="page">Группировки</li>
-            </ol>
-          </nav>
+    <section class="album py-4 bg-body-tertiary">
+      <div class="container py-4">
+        <nav aria-label="breadcrumb" class="my-3">
+          <ol class="breadcrumb breadcrumb-chevron px-3 py-1 bg-body-tertiary rounded-3 mk-bread-1">
+            <li class="breadcrumb-item"><a class="link-body-emphasis" href="index.html"><i class="bi bi-house-door-fill"></i></a></li>
+            <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="rse.html">ДЗЗ</a></li>
+            <li class="breadcrumb-item"><a class="link-body-emphasis fw-semibold text-decoration-none text-truncate mk-bold" href="radar-rse.html">Радиолокационное зондирование</a></li>
+            <li class="breadcrumb-item active text-truncate" aria-current="page">Статистические данные</li>
+          </ol>
+        </nav>
 
-          <div class="og-hero-panel">
-            <div class="row g-4 align-items-end">
-              <div class="col-12">
-                <div class="og-hero-copy d-grid gap-3">
-                  <div class="d-flex align-items-start">
-                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <i class="bi bi-diagram-3"></i>
-                    </div>
-                    <div class="d-grid gap-2">
-                      <h1 class="mk-bold og-hero-title">Группировки</h1>
-                    </div>
+        <div class="og-hero-panel">
+          <div class="row g-4 align-items-end">
+            <div class="col-12">
+              <div class="og-hero-copy d-grid gap-3">
+                <div class="d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="bi bi-table"></i>
                   </div>
-                  <div>
-                    <a href="radar-rse.html" class="btn btn-outline-secondary rounded-pill px-3 back-btn">
-                      <i class="bi bi-arrow-left me-2"></i>Назад
-                    </a>
+                  <div class="d-grid gap-2">
+                    <h1 class="mk-bold og-hero-title">Статистические данные</h1>
                   </div>
+                </div>
+                <div>
+                  <a href="radar-rse.html" class="btn btn-outline-secondary rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i>Назад
+                  </a>
                 </div>
               </div>
             </div>
@@ -140,44 +138,42 @@
       </div>
 
       <div class="container">
-        <div class="og-panel">
-          <div class="og-section-head">
-            <h2 class="mk-bold fs-4 mb-0">Филтрация</h2>
+        <div class="mk-chart-panel">
+          <div class="mk-table-controls mb-3">
+            <div>
+              <div class="mk-stat-label mb-2">Столбцы таблицы</div>
+              <div id="columnControls" class="d-flex flex-wrap gap-2"></div>
+            </div>
+            <button id="showAllRows" type="button" class="btn btn-outline-secondary btn-sm">
+              Показать все строки
+            </button>
           </div>
-
-          <h6 class="text-body-secondary mb-2">Страна</h6>
-          <div id="countryFilters" class="d-flex flex-wrap gap-2"></div>
-
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle mb-0 mk-data-table">
+              <thead id="statsTableHead"></thead>
+              <tbody id="statsTableBody">
+                <tr><td colspan="8" class="text-body-secondary small">Загрузка…</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
 
-        <div class="og-panel">
-          <div class="og-section-head">
-            <h2 class="mk-bold fs-4 mb-0">Формирование выборки</h2>
-          </div>
-
-          <div class="og-soft-card p-3 mb-4">
-            <div class="small text-body-secondary mb-2">Выбранные параметры</div>
-            <div id="selectedParams" class="d-flex flex-wrap gap-2">
-              <span class="text-body-secondary small">Пока параметры не выбраны</span>
+      <div class="modal fade" id="satelliteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title mk-bold fs-5" id="modalSatelliteTitle">Карточка объекта</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-
-          <div class="row g-3 mb-4">
-            <div class="col-12">
-              <div class="sat-card p-3 h-100">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                  <h3 class="mk-bold fs-5 mb-0">Спутники и группировки</h3>
-                  <span id="satCount" class="small text-body-secondary"></span>
-                </div>
-                <div id="satList" class="row g-3"></div>
-                <nav id="satPagination" class="d-flex justify-content-center mt-3"></nav>
+            <div class="modal-body">
+              <p id="modalSatelliteMeta" class="text-body-secondary"></p>
+              <div class="table-responsive mb-3">
+                <table class="table table-bordered align-middle mb-0">
+                  <thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+                  <tbody id="modalSatelliteTableBody"></tbody>
+                </table>
               </div>
-            </div>
-          </div>
-
-          <div class="og-soft-card p-4 mb-3">
-            <div class="og-section-head mb-3">
-              <h3 class="mk-bold fs-5 mb-0">Карточка объекта</h3>
               <div class="btn-group">
                 <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="PDF">PDF</button>
                 <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="Excel">Excel</button>
@@ -185,53 +181,11 @@
                 <button type="button" class="btn btn-outline-secondary btn-sm export-btn" data-format="HTML">HTML</button>
               </div>
             </div>
-            <div class="row g-4 align-items-start">
-              <div class="col-lg-4">
-                <div class="p-2 rounded-3 border card">
-                  <img id="satImage" class="img-fluid rounded" src="" alt="">
-                </div>
-              </div>
-              <div class="col-lg-8">
-                <h4 id="satTitle" class="mk-bold"></h4>
-                <p id="satMeta" class="text-body-secondary"></p>
-                <div class="table-responsive">
-                  <table class="table table-bordered align-middle mb-0">
-                    <thead>
-                      <tr>
-                        <th>Параметр</th>
-                        <th>Значение</th>
-                      </tr>
-                    </thead>
-                    <tbody id="satTableBody"></tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="album py-4 bg-body-tertiary">
-        <div class="container py-4">
-          <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-              <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Главная</a></li>
-              <li class="nav-item"><a href="rse.html" class="nav-link px-2 text-body-secondary">ДЗЗ</a></li>
-              <li class="nav-item"><a href="radar-rse.html" class="nav-link px-2 text-body-secondary">Радиолокационное зондирование</a></li>
-              <li class="nav-item"><a href="news01.html" class="nav-link px-2 text-body-secondary">Новости</a></li>
-            </ul>
-            <div class="py-2 text-center">
-              <a href="index.html"><img src="./dist/img/logo.svg" alt=""></a>
-            </div>
-            <p class="text-center text-body-secondary">2024-2026</p>
-          </footer>
-        </div>
-      </div>
-    </section>
-
-    <script src="./dist/js/radar-groups.js?v=21"></script>
+    <script src="./dist/js/radar-stats.js?v=8"></script>
   </body>
 </html>

@@ -1,11 +1,16 @@
 const API_BASE = '/satellites';
 const PAGE_SIZE = 6;
-const PARENT_ID = 148;
+const ID_TYPE = 1;
 const PLACEHOLDERS = [
   './dist/img/mkimg-01.jpg',
   './dist/img/mkimg-02.jpg',
   './dist/img/mkimg-03.jpg',
   './dist/img/mkimg-04.jpg',
+];
+const MASS_FILTERS = [
+  { key: 'gt1000', label: 'Больше 1000 кг' },
+  { key: 'lt1000', label: 'Меньше 1000 кг' },
+  { key: 'lte100', label: 'До 100 кг' },
 ];
 
 function getPlaceholder(satelliteId) {
@@ -43,9 +48,28 @@ function truncateWords(str, maxWords) {
   return words.slice(0, maxWords).join(' ') + '…';
 }
 
+function parseMass(value) {
+  if (value == null) return null;
+
+  const normalized = String(value)
+    .replace(',', '.')
+    .replace(/[^\d.]/g, '');
+  const parsed = Number.parseFloat(normalized);
+
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function massMatchesRange(mass, rangeKey) {
+  if (mass === null) return false;
+  if (rangeKey === 'gt1000') return mass > 1000;
+  if (rangeKey === 'lt1000') return mass < 1000;
+  if (rangeKey === 'lte100') return mass <= 100;
+  return true;
+}
+
 async function fetchSatellites() {
   try {
-    const response = await fetch(`${API_BASE}/groups?parent_id=${PARENT_ID}&limit=1000&offset=0`);
+    const response = await fetch(`${API_BASE}/groups?id_type=${ID_TYPE}&limit=1000&offset=0`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
 
@@ -65,7 +89,6 @@ async function fetchSatellites() {
     if (satPagination) satPagination.innerHTML = '';
     return;
   }
-  renderTypeFilters();
   renderCountryFilters();
   updateView();
 }
@@ -81,42 +104,37 @@ function renderPagination(totalFiltered) {
   satPagination.innerHTML =
     '<ul class="pagination align-items-center mb-0">' +
       '<li class="page-item' + (currentPage === 1 ? ' disabled' : '') + '">' +
-        '<a class="page-link" href="#" data-page="' + (currentPage - 1) + '">&laquo;</a>' +
+        '<button type="button" class="page-link" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + '>&laquo;</button>' +
       '</li>' +
       '<li class="page-item disabled">' +
         '<span class="page-link border-0 bg-transparent">' + currentPage + ' / ' + totalPages + '</span>' +
       '</li>' +
       '<li class="page-item' + (currentPage === totalPages ? ' disabled' : '') + '">' +
-        '<a class="page-link" href="#" data-page="' + (currentPage + 1) + '">&raquo;</a>' +
+        '<button type="button" class="page-link" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + '>&raquo;</button>' +
       '</li>' +
     '</ul>';
 
-  satPagination.querySelectorAll('[data-page]').forEach((el) => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
+  satPagination.querySelectorAll('[data-page]:not([disabled])').forEach((el) => {
+    el.addEventListener('click', () => {
       const p = parseInt(el.getAttribute('data-page'));
       if (p >= 1 && p <= totalPages) {
         currentPage = p;
         updateView();
+        satList.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 }
 
-function getSatelliteType(satellite) {
-  const types = [];
-  if (satellite.is_civ) types.push('Гражданский');
-  if (satellite.is_com) types.push('Коммерческий');
-  return types.join(', ') || '—';
-}
-
 function getSatelliteRows(satellite) {
   return [
-    ['Тип', getSatelliteType(satellite)],
     ['Страна', (satellite.country ?? []).join(', ') || '—'],
+    ['Масса', satellite.mass ? `${satellite.mass} кг` : '—'],
+    ['Диапазон', satellite.frequency_range ?? '—'],
+    ['Разрешение', satellite.resolution ?? '—'],
+    ['Радиометрическая чувствительность', satellite.radiometric_sensitivity ?? '—'],
     ['Описание', satellite.small_content ?? '—'],
-    ['Подробнее', satellite.big_content ?? '—'],
-    ['Источник', satellite.source ?? '—']
+    ['Подробнее', satellite.big_content ?? '—']
   ];
 }
 
@@ -135,15 +153,14 @@ function renderSelectedParams() {
 function getFilterGroups() {
   const groups = {
     country: { include: [], exclude: [] },
-    type: { include: [], exclude: [] }
+    countryMass: []
   };
 
   selectedFilters.forEach((item) => {
-    if (item.label.startsWith('Страна: ')) {
+    if (item.type === 'countryMass') {
+      groups.countryMass.push(item);
+    } else if (item.label.startsWith('Страна: ')) {
       groups.country[item.state].push(item.label.replace('Страна: ', ''));
-    }
-    if (item.label.startsWith('Тип: ') && item.key) {
-      groups.type[item.state].push(item.key);
     }
   });
 
@@ -152,19 +169,26 @@ function getFilterGroups() {
 
 function satelliteMatchesFilters(satellite, groups) {
   const countries = satellite.country ?? [];
+  const massFilteredCountries = groups.countryMass.map((filter) => filter.country);
+  const hasIncludeFilters = groups.country.include.length || groups.countryMass.length;
 
-  if (groups.country.include.length) {
-    if (!countries.some((c) => groups.country.include.includes(c))) return false;
-  }
   if (groups.country.exclude.length) {
     if (countries.some((c) => groups.country.exclude.includes(c))) return false;
   }
 
-  if (groups.type.include.length) {
-    if (!groups.type.include.some((key) => satellite[key])) return false;
-  }
-  if (groups.type.exclude.length) {
-    if (groups.type.exclude.some((key) => satellite[key])) return false;
+  if (hasIncludeFilters) {
+    const mass = parseMass(satellite.mass);
+    const matchesCountry = countries.some((country) => {
+      const massFilter = groups.countryMass.find((filter) => filter.country === country);
+
+      if (massFilter) {
+        return massMatchesRange(mass, massFilter.range);
+      }
+
+      return groups.country.include.includes(country) && !massFilteredCountries.includes(country);
+    });
+
+    if (!matchesCountry) return false;
   }
 
   return true;
@@ -257,45 +281,6 @@ function renderSatelliteList() {
   renderPagination(totalFiltered);
 }
 
-function renderTypeFilters() {
-  const container = document.getElementById('typeFilters');
-  if (!container) return;
-
-  const types = [
-    { key: 'is_civ', label: 'Гражданский' },
-    { key: 'is_com', label: 'Коммерческий' }
-  ];
-
-  container.innerHTML = '';
-
-  types.forEach(({ key, label }) => {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'sat-chip';
-    btn.dataset.state = 'neutral';
-    btn.innerHTML = `<span class="filter-marker"><i class="bi bi-dash-lg"></i></span><strong>${escapeHtml(label)}</strong>`;
-
-    btn.addEventListener('click', () => {
-      const nextState =
-        btn.dataset.state === 'neutral' ? 'include' :
-        btn.dataset.state === 'include' ? 'exclude' : 'neutral';
-
-      btn.dataset.state = nextState;
-      setControlState(btn.querySelector('.filter-marker'), nextState);
-
-      const filterLabel = `Тип: ${label}`;
-      const existing = selectedFilters.findIndex((item) => item.label === filterLabel);
-      if (existing >= 0) selectedFilters.splice(existing, 1);
-      if (nextState !== 'neutral') selectedFilters.push({ label: filterLabel, state: nextState, key });
-
-      currentPage = 1;
-      updateView();
-    });
-
-    container.appendChild(btn);
-  });
-}
-
 function renderCountryFilters() {
   const container = document.getElementById('countryFilters');
   if (!container) return;
@@ -309,11 +294,16 @@ function renderCountryFilters() {
   container.innerHTML = '';
 
   sorted.forEach((country) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'country-filter';
+    const countryFilter = selectedFilters.find((item) => item.label === `Страна: ${country}`);
+
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'sat-chip';
-    btn.dataset.state = 'neutral';
+    btn.dataset.state = countryFilter?.state ?? 'neutral';
     btn.innerHTML = `<span class="filter-marker"><i class="bi bi-dash-lg"></i></span><strong>${escapeHtml(country)}</strong>`;
+    setControlState(btn.querySelector('.filter-marker'), btn.dataset.state);
 
     btn.addEventListener('click', () => {
       const nextState =
@@ -327,12 +317,87 @@ function renderCountryFilters() {
       const existing = selectedFilters.findIndex((item) => item.label === label);
       if (existing >= 0) selectedFilters.splice(existing, 1);
       if (nextState !== 'neutral') selectedFilters.push({ label, state: nextState });
+      if (nextState !== 'include') {
+        const massExisting = selectedFilters.findIndex((item) => item.type === 'countryMass' && item.country === country);
+        if (massExisting >= 0) selectedFilters.splice(massExisting, 1);
+      }
 
       currentPage = 1;
       updateView();
+      renderCountryFilters();
     });
 
-    container.appendChild(btn);
+    const menuToggle = document.createElement('button');
+    menuToggle.type = 'button';
+    menuToggle.className = 'sat-chip country-mass-toggle';
+    menuToggle.setAttribute('aria-label', `Фильтры массы: ${country}`);
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.innerHTML = '<i class="bi bi-chevron-down"></i>';
+    if (btn.dataset.state !== 'include') {
+      menuToggle.disabled = true;
+    }
+
+    const menu = document.createElement('div');
+    menu.className = 'country-mass-menu d-none';
+    menu.innerHTML = MASS_FILTERS.map((filter) => {
+      return `
+        <button type="button" class="country-mass-option" data-range="${filter.key}">
+          ${escapeHtml(filter.label)}
+        </button>
+      `;
+    }).join('');
+
+    menuToggle.addEventListener('click', () => {
+      if (menuToggle.disabled) return;
+
+      const isOpen = !menu.classList.contains('d-none');
+      document.querySelectorAll('.country-mass-menu').forEach((item) => item.classList.add('d-none'));
+      document.querySelectorAll('.country-mass-toggle').forEach((item) => item.setAttribute('aria-expanded', 'false'));
+
+      if (!isOpen) {
+        menu.classList.remove('d-none');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    menu.querySelectorAll('.country-mass-option').forEach((option) => {
+      option.addEventListener('click', () => {
+        const range = option.dataset.range;
+        const rangeLabel = MASS_FILTERS.find((item) => item.key === range)?.label ?? '';
+        const existing = selectedFilters.findIndex((item) => item.type === 'countryMass' && item.country === country);
+
+        if (existing >= 0 && selectedFilters[existing].range === range) {
+          selectedFilters.splice(existing, 1);
+        } else {
+          if (existing >= 0) selectedFilters.splice(existing, 1);
+          selectedFilters.push({
+            type: 'countryMass',
+            label: `${country}: ${rangeLabel}`,
+            state: 'include',
+            country,
+            range,
+          });
+        }
+
+        currentPage = 1;
+        menu.classList.add('d-none');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        updateView();
+        renderCountryFilters();
+      });
+    });
+
+    const activeMassFilter = selectedFilters.find((item) => item.type === 'countryMass' && item.country === country);
+    if (activeMassFilter) {
+      menuToggle.dataset.state = 'include';
+      const activeOption = menu.querySelector(`[data-range="${activeMassFilter.range}"]`);
+      if (activeOption) activeOption.classList.add('active');
+    }
+
+    wrapper.appendChild(btn);
+    wrapper.appendChild(menuToggle);
+    wrapper.appendChild(menu);
+    container.appendChild(wrapper);
   });
 }
 

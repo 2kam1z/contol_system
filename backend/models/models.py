@@ -43,3 +43,23 @@ class CountryList(Model):
     id_type: Mapped[int]
     id_country: Mapped[int]
     id_page: Mapped[int]
+
+class CharList(Model):
+    __tablename__ = "char_list"
+
+    id_row: Mapped[int] = mapped_column(primary_key=True)
+    id_page: Mapped[int]
+    id_char: Mapped[int]
+    measurement_data: Mapped[datetime]
+    measurement_condition: Mapped[str]
+    value: Mapped[str]
+    id_link: Mapped[int]
+    source: Mapped[str]
+    right_number: Mapped[int]
+
+class ScriptContentType(Model):
+    __tablename__ = "script_content_type"
+
+    id_row: Mapped[int] = mapped_column(primary_key=True)
+    id_page: Mapped[int]
+    id_type: Mapped[int]

@@ -20,16 +20,14 @@ def content_disposition(filename: str) -> str:
 
 
 def get_rows(sat: SSatelliteOut) -> list[tuple[str, str]]:
-    types = ", ".join(filter(None, [
-        "Гражданский" if sat.is_civ else None,
-        "Коммерческий" if sat.is_com else None,
-    ])) or "—"
     return [
-        ("Тип", types),
         ("Страна", ", ".join(sat.country) or "—"),
+        ("Масса", f"{sat.mass} кг" if sat.mass else "—"),
+        ("Диапазон", sat.frequency_range or "—"),
+        ("Разрешение", sat.resolution or "—"),
+        ("Радиометрическая чувствительность", sat.radiometric_sensitivity or "—"),
         ("Описание", sat.small_content or "—"),
         ("Подробнее", sat.big_content or "—"),
-        ("Источник", sat.source or "—"),
     ]
 
 

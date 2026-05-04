@@ -8,12 +8,12 @@ class SSatelliteOut(BaseModel):
     img: str | None
     small_content: str | None
     big_content: str | None
-    source: str | None
     country: list[str]
-    is_civ: bool
-    is_com: bool
+    mass: str | None
+    frequency_range: str | None = None
+    resolution: str | None = None
+    radiometric_sensitivity: str | None = None
 
 class SSatellitePageOut(BaseModel):
     items: list[SSatelliteOut]
     total: int
-

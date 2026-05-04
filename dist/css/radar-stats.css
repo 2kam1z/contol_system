@@ -1,0 +1,146 @@
+.mk-stats-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.mk-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mk-stat-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  background: var(--bs-body-bg);
+  padding: 1rem;
+  min-height: 112px;
+}
+
+.mk-stat-label {
+  color: var(--bs-secondary-color);
+  font-size: .82rem;
+}
+
+.mk-stat-value {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mk-chart-panel {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  background: var(--bs-body-bg);
+  padding: 1rem;
+}
+
+.mk-bar-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 180px) 1fr 56px;
+  align-items: center;
+  gap: .75rem;
+  min-height: 36px;
+}
+
+.mk-bar-track {
+  height: .7rem;
+  border-radius: 999px;
+  background: var(--bs-tertiary-bg);
+  overflow: hidden;
+}
+
+.mk-bar-fill {
+  height: 100%;
+  min-width: 3px;
+  border-radius: inherit;
+  background: var(--bs-primary);
+}
+
+.mk-mass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mk-mass-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  padding: 1rem;
+  background: var(--bs-tertiary-bg);
+}
+
+.mk-status-line {
+  color: var(--bs-secondary-color);
+  font-size: .9rem;
+}
+
+.mk-data-table {
+  min-width: 1320px;
+}
+
+.mk-data-table th,
+.mk-data-table td {
+  vertical-align: top;
+}
+
+.mk-table-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mk-toggle-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 999px;
+  background: var(--bs-body-bg);
+  padding: .35rem .65rem;
+  font-size: .82rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mk-toggle-chip .form-check-input {
+  margin: 0;
+}
+
+.mk-row-check-cell {
+  width: 48px;
+  text-align: center;
+}
+
+.mk-click-row {
+  cursor: pointer;
+}
+
+.mk-click-row:hover td {
+  background: var(--bs-tertiary-bg);
+}
+
+@media (max-width: 991.98px) {
+  .mk-stats-grid,
+  .mk-mass-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mk-stats-grid,
+  .mk-mass-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mk-bar-row {
+    grid-template-columns: 1fr;
+    gap: .35rem;
+  }
+
+  .mk-table-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

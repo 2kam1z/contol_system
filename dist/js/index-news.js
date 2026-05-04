@@ -33,12 +33,12 @@
       const img = PLACEHOLDERS[idx % PLACEHOLDERS.length];
       const href = '01.html?id=' + n.id_page;
       return '<div class="d-flex justify-content-between rounded-2 border pe-2 mb-1 bg-body">' +
-        '<div class="d-flex flex-fill align-items-center">' +
+        '<div class="d-flex flex-fill align-items-start">' +
           '<div class="p-2">' +
             '<a href="' + href + '"><img class="rounded" src="' + escapeHtml(img) + '" alt="" style="width:90px;height:90px;object-fit:cover"></a>' +
           '</div>' +
-          '<div class="d-flex flex-fill align-items-center">' +
-            '<div class="d-flex text-truncate flex-column ms-2">' +
+          '<div class="d-flex flex-fill align-items-start">' +
+            '<div class="d-flex text-truncate flex-column ms-2 mt-2">' +
               '<div class="mk-data-2 text-body-tertiary pe-2">' +
                 '<span class="me-2"><i class="bi bi-clock-fill pe-2"></i>' + escapeHtml(fmt.time) + '</span>' +
                 '<span class="me-4"><i class="bi bi-calendar2-event-fill pe-2"></i>' + escapeHtml(fmt.date) + '</span>' +

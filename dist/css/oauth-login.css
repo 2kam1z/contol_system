@@ -1,0 +1,89 @@
+.mk-auth-shell {
+  min-height: 100vh;
+  padding: 96px 16px 32px;
+  display: grid;
+  place-items: center;
+  background: var(--bs-body-bg);
+}
+
+.mk-auth-card {
+  width: min(360px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.mk-auth-brand {
+  width: 150px;
+  max-width: 100%;
+}
+
+.mk-auth-title {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.mk-yandex-login-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.mk-yandex-login-button:hover {
+  background: #333;
+}
+
+.mk-yandex-login-button:active {
+  transform: translateY(1px);
+}
+
+.mk-yandex-login-button:focus-visible {
+  outline: 3px solid rgba(255, 204, 0, 0.75);
+  outline-offset: 3px;
+}
+
+.mk-yandex-login-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.mk-yandex-login-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fc3f1d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mk-auth-status {
+  min-height: 24px;
+  text-align: center;
+}
+
+.mk-auth-progress {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fc3f1d;
+  background: rgba(252, 63, 29, 0.08);
+}

@@ -1,5 +1,5 @@
 const API_BASE = '/satellites';
-const PARENT_ID = 148;
+const ID_TYPE = 1;
 const PAGE_SIZE = 12;
 const PLACEHOLDERS = [
   './dist/img/mkimg-01.jpg',
@@ -57,7 +57,7 @@ async function fetchAndRender() {
   const q = searchInput.value.trim();
   const url = new URL(`${API_BASE}/search`, location.href);
   if (q) url.searchParams.set('q', q);
-  url.searchParams.set('parent_id', String(PARENT_ID));
+  url.searchParams.set('id_type', String(ID_TYPE));
   url.searchParams.set('limit', String(PAGE_SIZE));
   url.searchParams.set('offset', String(currentPage * PAGE_SIZE));
 
@@ -155,9 +155,6 @@ function fillModal(itemId) {
   if (!item) return;
 
   const country = (item.country ?? []).join(', ');
-  const typeParts = [];
-  if (item.is_civ) typeParts.push('Гражданский');
-  if (item.is_com) typeParts.push('Коммерческий');
 
   modalSatelliteTitle.textContent = item.title_content ?? '';
   modalSatelliteMeta.textContent = country;
@@ -165,10 +162,12 @@ function fillModal(itemId) {
 
   const rows = [
     ['Страна', country || '—'],
-    ['Тип', typeParts.join(', ') || '—'],
+    ['Масса', item.mass ? `${item.mass} кг` : '—'],
+    ['Диапазон', item.frequency_range ?? '—'],
+    ['Разрешение', item.resolution ?? '—'],
+    ['Радиометрическая чувствительность', item.radiometric_sensitivity ?? '—'],
     ['Описание', item.small_content ?? '—'],
     ['Подробнее', item.big_content ?? '—'],
-    ['Источник', item.source ?? '—'],
   ];
   modalSatelliteTableBody.innerHTML = rows.map(([k, v]) =>
     `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(v)}</td></tr>`).join('');

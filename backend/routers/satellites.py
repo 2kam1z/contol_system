@@ -3,7 +3,7 @@ from starlette import status
 
 from backend.database.db import SessionDep
 from backend.services.exporters import export_pdf, export_excel, export_doc, export_html
-from backend.services.repository import SatellitesRepository
+from backend.repositories.repository import SatellitesRepository
 from backend.schemas.satellite import SSatellitePageOut
 
 
@@ -20,11 +20,11 @@ _EXPORT_HANDLERS = {
 @router.get("/groups", status_code=status.HTTP_200_OK)
 async def get_satellites(
         session: SessionDep,
-        parent_id: int,
+        id_type: int,
         limit: int = Query(default=6, ge=1, le=1000),
         offset: int = Query(default=0, ge=0),
     ) -> SSatellitePageOut:
-    return await SatellitesRepository.find_satellites(session, parent_id=parent_id, limit=limit, offset=offset)
+    return await SatellitesRepository.find_satellites(session, id_type=id_type, limit=limit, offset=offset)
 
 
 @router.get("/{id}/export")
@@ -48,8 +48,8 @@ async def export_satellite(
 async def search_satellites(
     session: SessionDep,
     query: str = Query(default="", alias="q"),
-    parent_id: int = Query(default=148),
+    id_type: int = Query(default=1),
     limit: int = Query(default=50, ge=1, le=200),
     offset: int = Query(default=0, ge=0),
 ) -> SSatellitePageOut:
-    return await SatellitesRepository.find_satellites(session, parent_id=parent_id, query=query, limit=limit, offset=offset)
+    return await SatellitesRepository.find_satellites(session, id_type=id_type, query=query, limit=limit, offset=offset)

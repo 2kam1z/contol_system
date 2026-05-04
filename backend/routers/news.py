@@ -2,7 +2,7 @@ from fastapi import APIRouter, Query, HTTPException
 from starlette import status
 
 from backend.database.db import SessionDep
-from backend.services.repository import NewsRepository
+from backend.repositories.repository import NewsRepository
 from backend.schemas.news import SNewsPageOut, SNewsOut
 
 router = APIRouter(prefix="/news", tags=["News"])
