@@ -13,12 +13,4 @@ app.include_router(satellites_router)
 app.include_router(news_router)
 app.include_router(oauth_router)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:8000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 app.mount("/", StaticFiles(directory=".", html=True), name="static")
